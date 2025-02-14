@@ -44,15 +44,14 @@
     <div class="absolute inset-0 bg-black bg-opacity-50">
         
     </div>
-    <img src="hero.jpg" alt="Hero Image" class="w-full h-[100vh] object-cover">
+    <img src="hero.jpg" alt="Hero Image" class="w-full h-[100vh] object-cover object-[80%]">
     <!-- Text content -->
-    <div class="absolute z-10 text-center h-full w-full">
-      <p class="font-bona uppercase tracking-wider md:text-base mb-[80px] mt-[150px]" style="font-size: 28px">
+    <div class="absolute z-10 px-6 lg:px-0 text-left lg:text-center h-full w-full">
+      <p class="font-bona uppercase tracking-wider md:text-base mb-[80px] mt-[225px] lg:mt-[150px] text-2xl lg:text-2xl" >
         We're getting married!
       </p>
       <h1
-        class="font-bona mb-[80px]"
-        style="font-size: 80px"
+        class="font-bona mb-[80px] text-6xl lg:text-8xl"
       >
         Becca &amp; Alexander
       </h1>
@@ -64,10 +63,10 @@
       </p>
       <!-- Countdown -->
       <div class="absolute flex justify-center align-center w-[100vw] gap-5 pt-2 pb-4" style="bottom: 0; left: 0; background: #E8F3F9; color: #566992">
-        <span class="font-bona text-4xl flex items-baseline gap-2"><span id="days">0</span> <span class="text-lg" style="color: #99A5BF">Days</span></span>
-        <span class="font-bona text-4xl flex items-baseline gap-2"><span id="hours">0</span> <span class="text-lg" style="color: #99A5BF">Hours</span></span>
-        <span class="font-bona text-4xl flex items-baseline gap-2"><span id="minutes">0</span> <span class="text-lg" style="color: #99A5BF">Minutes</span></span>
-        <span class="font-bona text-4xl flex items-baseline gap-2"><span id="seconds">0</span> <span class="text-lg" style="color: #99A5BF">Seconds</span></span>
+        <span class="font-bona text-2xl lg:text-4xl flex items-baseline gap-2"><span id="days">0</span> <span class="text-sm lg:text-lg" style="color: #99A5BF">Days</span></span>
+        <span class="font-bona text-2xl lg:text-4xl flex items-baseline gap-2"><span id="hours">0</span> <span class="text-sm lg:text-lg" style="color: #99A5BF">Hours</span></span>
+        <span class="font-bona text-2xl lg:text-4xl flex items-baseline gap-2"><span id="minutes">0</span> <span class="text-sm lg:text-lg" style="color: #99A5BF">Minutes</span></span>
+        <span class="font-bona text-2xl lg:text-4xl flex items-baseline gap-2"><span id="seconds">0</span> <span class="text-sm lg:text-lg" style="color: #99A5BF">Seconds</span></span>
       </div>
     </div>
   </section>
@@ -76,7 +75,7 @@
   <section class="py-12 px-4">
     <div class="max-w-2xl mx-auto text-center">
       <h2
-        class="font-bona text-5xl mb-6"
+        class="font-bona text-4xl lg:text-5xl mb-6"
         style="color: #2A3C62"
       >
         Celebrate With Us!
@@ -92,8 +91,8 @@
 
   <!-- Location & Date Section -->
   <section class="pb-16 px-4 flex justify-center">
-    <div class="py-8 px-12 rounded-[20px] w-auto flex items-center gap-[100px]" style="background: #E8F3F9">
-       <img src="palm.png" alt="Palm Tree" class="w-[130px]">
+    <div class="py-8 px-12 rounded-[20px] w-full lg:w-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-[100px]" style="background: #E8F3F9">
+       <img src="palm.png" alt="Palm Tree" class="w-[90px] lg:w-[130px]">
        <div class="flex flex-col items-center justify-center gap-2">
         <div class="text-center">
             <p class="font-bona text-2xl font-bold mb-[-4px]" style="color: #2A3C62">
@@ -116,7 +115,7 @@
   </section>
 
   <section class="py-12">
-    <div class="flex justify-center gap-8 h-96">
+    <div class="flex flex-col lg:flex-row justify-center gap-2 lg:gap-8 lg:h-96">
         <img 
           src="couple1.jpg" 
           alt="Wedding Party" 
@@ -160,15 +159,15 @@
 
   <!-- Footer -->
   <footer class="py-6 px-8 text-gray-600" style="background: #E8F3F9; color: #566992">
-    <div class="flex justify-between items-center">
-        <div>
+    <div class="flex flex-col lg:flex-row gap-4 lg:gap-0 justify-between items-center">
+        <div class="text-center lg:text-left">
             <p class="text-xl mb-[-4px]">The Ryan Wedding</p>
             <p class="mb-2">September 5, 2026</p>
         </div>
 
         <img src="palm.png" alt="Palm Tree" class="w-[50px]">
       
-      <p class="text-gray-500">
+      <p class="text-gray-500 mt-6 lg:mt-0">
         Made with <span class="text-red-500">&hearts;</span> by Alexander
       </p>
     </div>
