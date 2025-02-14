@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Becca & Alexander</title>
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Jaldi and Bona Nova SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jaldi&family=Bona+Nova+SC&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Optional Tailwind configuration to add custom fonts -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            jaldi: ['Jaldi', 'sans-serif'],
+            bona: ['Bona Nova SC', 'serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Optional: Your custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="font-jaldi text-gray-800">
+  <!-- Hero Section -->
+  <section
+    class="relative w-full min-h-screen bg-cover bg-center flex flex-col items-center justify-center text-white"
+    style="background-image: url('your-hero-image.jpg');"
+  >
+    <!-- Overlay (if you want a subtle dark overlay over the hero image) -->
+    <div class="absolute inset-0 bg-black bg-opacity-50">
+        
+    </div>
+    <img src="hero.jpg" alt="Hero Image" class="w-full h-[100vh] object-cover">
+    <!-- Text content -->
+    <div class="absolute z-10 text-center h-full w-full">
+      <p class="font-bona uppercase tracking-wider md:text-base mb-[80px] mt-[150px]" style="font-size: 28px">
+        We're getting married!
+      </p>
+      <h1
+        class="font-bona mb-[80px]"
+        style="font-size: 80px"
+      >
+        Becca &amp; Alexander
+      </h1>
+      <p class="mb-[-4px]" style="font-size: 28px">
+        September 5, 2026
+      </p>
+      <p style="font-size: 24px; color: rgba(255,255,255,0.77)">
+        San Diego, CA
+      </p>
+      <!-- Countdown -->
+      <div class="absolute flex justify-center align-center w-[100vw] gap-5 pt-2 pb-4" style="bottom: 0; left: 0; background: #E8F3F9; color: #566992">
+        <span class="font-bona text-4xl flex items-baseline gap-2"><span id="days">0</span> <span class="text-lg" style="color: #99A5BF">Days</span></span>
+        <span class="font-bona text-4xl flex items-baseline gap-2"><span id="hours">0</span> <span class="text-lg" style="color: #99A5BF">Hours</span></span>
+        <span class="font-bona text-4xl flex items-baseline gap-2"><span id="minutes">0</span> <span class="text-lg" style="color: #99A5BF">Minutes</span></span>
+        <span class="font-bona text-4xl flex items-baseline gap-2"><span id="seconds">0</span> <span class="text-lg" style="color: #99A5BF">Seconds</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Celebrate With Us Section -->
+  <section class="py-12 px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2
+        class="font-bona text-5xl mb-6"
+        style="color: #2A3C62"
+      >
+        Celebrate With Us!
+      </h2>
+      <p class="mb-8 leading-relaxed text-xl" style="color: #4B5E88">
+        Join us as we celebrate seven years of love, laughter, and adventure.
+        We’re thrilled to invite you to our wedding in sunny San Diego, where you’ll
+        enjoy dancing, delicious tacos, and festivities. We can’t wait to welcome you
+        to our special day! ❤️
+      </p>
+    </div>
+  </section>
+
+  <!-- Location & Date Section -->
+  <section class="pb-16 px-4 flex justify-center">
+    <div class="py-8 px-12 rounded-[20px] w-auto flex items-center gap-[100px]" style="background: #E8F3F9">
+       <img src="palm.png" alt="Palm Tree" class="w-[130px]">
+       <div class="flex flex-col items-center justify-center gap-2">
+        <div class="text-center">
+            <p class="font-bona text-2xl font-bold mb-[-4px]" style="color: #2A3C62">
+            San Diego, CA
+            </p>
+            <p class="text-lg" style="color: rgba(75,94,136,0.55)">
+            Harbor View Loft
+            </p>
+        </div>
+        <div class="text-center">
+            <p class="font-bona text-2xl font-bold mb-[-4px]" style="color: #2A3C62">
+                September 5, 2026
+            </p>
+            <p class="text-lg" style="color: rgba(75,94,136,0.55)">
+            Ceremony at 3 PM
+            </p>
+        </div>
+       </div>
+    </div>
+  </section>
+
+  <section class="py-12">
+    <div class="flex justify-center gap-8 h-96">
+        <img 
+          src="couple1.jpg" 
+          alt="Wedding Party" 
+          class="h-full w-auto object-cover"
+        >
+        <img 
+          src="couple2.jpg" 
+          alt="Wedding Party" 
+          class="h-full w-auto object-cover"
+        >
+        <img 
+          src="couple3.jpg" 
+          alt="Wedding Party" 
+          class="h-full w-auto object-cover"
+        >
+      </div>
+  </section>
+
+  <!-- Stay in the Know (Form) -->
+  <section class="py-12 px-4 flex justify-center mb-16">
+    <div class="flex flex-col gap-2 justify-center items-center w-[40%]">
+            <h2
+            class="font-bona text-3xl md:text-4xl font-bold mb-4"
+            style="color: #2A3C62"
+          >
+            RSVP
+          </h2>
+          <p class="mb-8 leading-relaxed text-center text-xl" style="color: #4B5E88">
+            Coming soon!
+          </p>
+    <!-- <button
+      type="submit"
+      disabled
+      class="px-6 py-2 text-white rounded w-[60%] text-xl"
+      style="background: rgba(42,60,98,0.4)"
+      onclick="window.open('https://forms.gle/N7RE5WGYvyQ22NsQA', '_blank')"
+    >
+      RSVP Form
+    </button> -->
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 px-8 text-gray-600" style="background: #E8F3F9; color: #566992">
+    <div class="flex justify-between items-center">
+        <div>
+            <p class="text-xl mb-[-4px]">The Ryan Wedding</p>
+            <p class="mb-2">September 5, 2026</p>
+        </div>
+
+        <img src="palm.png" alt="Palm Tree" class="w-[50px]">
+      
+      <p class="text-gray-500">
+        Made with <span class="text-red-500">&hearts;</span> by Alexander
+      </p>
+    </div>
+  </footer>
+
+  <!-- Optional: Your custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
