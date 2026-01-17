@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>RSVP — Becca & Alexander</title>
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="RSVP for Becca & Alexander's wedding on September 5, 2026 at Harbor View Loft in San Diego." />
+  <meta property="og:title" content="RSVP — Becca & Alexander" />
+  <meta property="og:description" content="Let us know if you can join us on September 5, 2026" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/hero.jpg" />
+  <meta name="theme-color" content="#E8F3F9" />
+  <link rel="icon" href="/palm.png" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts: Jaldi & Bona Nova SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Bona+Nova+SC&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind config: fonts + a few color tokens -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            skywash: '#E8F3F9',
+            ink: '#2A3C62',
+            slatey: '#4B5E88',
+            mist: '#99A5BF',
+          },
+          fontFamily: {
+            jaldi: ['Jaldi', 'sans-serif'],
+            bona: ['"Bona Nova SC"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+      .fade-in.is-visible { opacity: 1; transform: none; }
+    }
+
+    /* Mobile-specific improvements */
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .touch-manipulation { touch-action: manipulation; }
+      input, select, textarea { font-size: 16px; }
+      .mobile-spacing { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+    /* Smooth transitions for interactive elements */
+    button, a, input, details summary {
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body class="font-jaldi text-gray-800 bg-white">
+  <a href="#rsvp" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-ink text-white px-3 py-2 rounded-lg">Skip to RSVP form</a>
+
+  <!-- Top Nav -->
+  <header class="fixed inset-x-0 top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b border-black/5">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <img src="palm.png" alt="Palm icon" class="h-6 w-6" />
+        <a href="index.html" class="font-bona tracking-wide text-ink hover:text-slatey transition-colors">Becca & Alexander</a>
+      </div>
+      <ul class="hidden md:flex items-center gap-6 text-slatey">
+        <li><a href="index.html" class="hover:text-ink transition-colors">Home</a></li>
+        <li><a href="details.html" class="hover:text-ink transition-colors">Details</a></li>
+        <li><a href="photos.html" class="hover:text-ink transition-colors">Photos</a></li>
+        <li><a href="rsvp.html" class="text-ink font-medium transition-colors">RSVP</a></li>
+        <li><a href="faq.html" class="hover:text-ink transition-colors">FAQ</a></li>
+        <li><a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Registry</a></li>
+      </ul>
+      <a href="rsvp.html" class="hidden md:inline-flex rounded-xl bg-ink text-white px-4 py-2 hover:bg-ink/90 transition-colors">RSVP</a>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Toggle mobile menu">
+        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-black/5">
+      <div class="px-4 py-3 space-y-3">
+        <a href="index.html" class="block py-2 text-slatey hover:text-ink transition-colors">Home</a>
+        <a href="details.html" class="block py-2 text-slatey hover:text-ink transition-colors">Details</a>
+        <a href="photos.html" class="block py-2 text-slatey hover:text-ink transition-colors">Photos</a>
+        <a href="rsvp.html" class="block py-2 text-ink font-medium">RSVP</a>
+        <a href="faq.html" class="block py-2 text-slatey hover:text-ink transition-colors">FAQ</a>
+        <a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="block py-2 text-slatey hover:text-ink transition-colors">Registry</a>
+        <a href="rsvp.html" class="block mt-3 rounded-xl bg-ink text-white px-4 py-2 text-center hover:bg-ink/90 transition-colors">RSVP Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-12 sm:pt-24 sm:pb-16 bg-gradient-to-b from-skywash/40 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="font-bona text-4xl sm:text-5xl md:text-6xl mb-4 text-ink">RSVP</h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-slatey max-w-3xl mx-auto leading-relaxed">
+        Let us know who's coming! Add one or more people below.
+      </p>
+    </div>
+  </section>
+
+  <!-- RSVP Form -->
+  <section id="rsvp" class="py-12 sm:py-16 px-4">
+    <div class="max-w-2xl mx-auto">
+      <form id="rsvpForm" class="space-y-6" action="https://formspree.io/f/xnnbgbev" method="POST">
+        <!-- honeypot -->
+        <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" />
+
+        <!-- Guests list -->
+        <div id="guestsList" class="space-y-4"></div>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+          <button type="button" id="addGuest" class="rounded-xl border border-ink/20 px-4 py-2 hover:bg-skywash transition-colors touch-manipulation">+ Add another person</button>
+          <button type="submit" class="rounded-2xl bg-ink text-white px-6 py-3 hover:bg-ink/90 transition-colors touch-manipulation">Submit RSVP</button>
+        </div>
+
+        <!-- Hidden field that will carry the structured JSON to Formspree -->
+        <input type="hidden" name="guests_json" id="guests_json" />
+      </form>
+
+      <p id="rsvpMsg" class="text-center text-slatey mt-4"></p>
+
+      <!-- Additional Info -->
+      <div class="mt-12 text-center fade-in">
+        <p class="text-slatey mb-4">Have questions about the event?</p>
+        <a href="faq.html" class="text-ink hover:text-slatey underline transition-colors">Check out our FAQ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
+      <div class="text-center md:text-left">
+        <p class="text-lg sm:text-xl leading-tight">The Ryan Wedding</p>
+        <p class="leading-tight text-sm sm:text-base">September 5, 2026</p>
+      </div>
+      <img src="palm.png" alt="Palm" class="w-6 sm:w-8 h-6 sm:h-8" />
+      <p class="text-gray-500 text-sm sm:text-base text-center md:text-right">Made with <span class="text-red-500">❤️</span> by Alexander</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // IntersectionObserver for subtle fade-ins
+    (function io(){
+      if(!('IntersectionObserver' in window)) return;
+      const obs = new IntersectionObserver((entries)=>{
+        for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); } }
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+    })();
+
+    // Mobile menu toggle
+    (function mobileMenu(){
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      if (!menuBtn || !menu) return;
+
+      menuBtn.addEventListener('click', function() {
+        const isHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden', !isHidden);
+
+        const svg = menuBtn.querySelector('svg path');
+        if (svg) {
+          if (isHidden) {
+            svg.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+          } else {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+
+      menu.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+          menu.classList.add('hidden');
+          const svg = menuBtn.querySelector('svg path');
+          if (svg) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          menu.classList.add('hidden');
+          const svg = menuBtn.querySelector('svg path');
+          if (svg) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+    })();
+
+    // === RSVP (Formspree) ===
+    (function rsvpWithFormspree(){
+      const list = document.getElementById('guestsList');
+      const addBtn = document.getElementById('addGuest');
+      const form = document.getElementById('rsvpForm');
+      const msg = document.getElementById('rsvpMsg');
+      const hiddenJSON = document.getElementById('guests_json');
+
+      if(!list || !addBtn || !form) return;
+
+      let counter = 0;
+      function guestTemplate(id){
+        return `
+          <div class="guestCard rounded-2xl border border-ink/10 p-4">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="font-bona text-lg sm:text-xl text-ink">Person <span class="guestIndex"></span></h3>
+              <button type="button" class="removeGuest text-slatey hover:text-ink touch-manipulation p-1">Remove</button>
+            </div>
+            <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div>
+                <label class="block text-slatey mb-1 text-sm sm:text-base">First name *</label>
+                <input required class="w-full rounded-xl border border-ink/20 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base" data-field="first_name" />
+              </div>
+              <div>
+                <label class="block text-slatey mb-1 text-sm sm:text-base">Last name *</label>
+                <input required class="w-full rounded-xl border border-ink/20 px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base" data-field="last_name" />
+              </div>
+            </div>
+
+            <div class="mt-3 space-y-3 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-4 sm:items-start">
+              <label class="inline-flex items-center gap-2 touch-manipulation">
+                <input type="checkbox" class="h-4 w-4 sm:h-5 sm:w-5" data-field="attending" />
+                <span class="text-slatey text-sm sm:text-base">Can attend</span>
+              </label>
+
+              <div>
+                <label class="inline-flex items-center gap-2 touch-manipulation">
+                  <input type="checkbox" class="h-4 w-4 sm:h-5 sm:w-5" data-field="has_diet" />
+                  <span class="text-slatey text-sm sm:text-base">Any dietary restrictions?</span>
+                </label>
+                <input class="mt-2 w-full rounded-xl border border-ink/20 px-3 sm:px-4 py-2 sm:py-3 hidden text-sm sm:text-base" placeholder="Please describe" data-field="diet_details" />
+              </div>
+            </div>
+          </div>`;
+      }
+
+      function renumber(){
+        list.querySelectorAll('.guestCard .guestIndex').forEach((el, i)=>{ el.textContent = i+1; });
+      }
+
+      function addGuest(){
+        const id = ++counter;
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = guestTemplate(id);
+        const node = wrapper.firstElementChild;
+        list.appendChild(node);
+        renumber();
+      }
+
+      function collectGuests(){
+        const guests = [];
+        list.querySelectorAll('.guestCard').forEach(card => {
+          const get = name => card.querySelector(`[data-field="${name}"]`);
+          const first = get('first_name').value.trim();
+          const last = get('last_name').value.trim();
+          const attending = get('attending').checked ? 'yes' : 'no';
+          const hasDiet = get('has_diet').checked;
+          const diet = hasDiet ? get('diet_details').value.trim() : '';
+          if(first && last){
+            guests.push({ first, last, attending, diet });
+          }
+        });
+        return guests;
+      }
+
+      // initial one
+      addGuest();
+
+      addBtn.addEventListener('click', addGuest);
+
+      // delegation for remove + diet toggle
+      list.addEventListener('click', (e)=>{
+        const target = e.target;
+        if(target.classList.contains('removeGuest')){
+          const card = target.closest('.guestCard');
+          card?.remove();
+          renumber();
+        }
+      });
+
+      list.addEventListener('change', (e)=>{
+        const t = e.target;
+        if(t && t.matches('input[data-field="has_diet"]')){
+          const details = t.closest('.guestCard').querySelector('[data-field="diet_details"]');
+          if(details){ details.classList.toggle('hidden', !t.checked); if(t.checked) details.focus(); }
+        }
+      });
+
+      form.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        msg.textContent = 'Submitting…';
+
+        const guests = collectGuests();
+        if(guests.length === 0){
+          msg.textContent = 'Please add at least one person.';
+          return;
+        }
+
+        hiddenJSON.value = JSON.stringify(guests);
+
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          });
+          if(!res.ok) throw new Error('Network error');
+          const out = await res.json().catch(()=>({}));
+          if(out.ok === true || res.status === 200){
+            msg.textContent = 'Thank you! We received your RSVP 💌';
+            form.reset();
+            list.innerHTML = '';
+            addGuest();
+          } else {
+            msg.textContent = 'Something went wrong. Please try again.';
+          }
+        } catch (err){
+          msg.textContent = 'Sorry, there was a problem submitting. Please try again.';
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

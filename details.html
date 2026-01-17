@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Event Details — Becca & Alexander</title>
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="Event details for Becca & Alexander's wedding on September 5, 2026 at Harbor View Loft in San Diego." />
+  <meta property="og:title" content="Event Details — Becca & Alexander" />
+  <meta property="og:description" content="Harbor View Loft • San Diego • Ceremony at 5 PM" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/hero.jpg" />
+  <meta name="theme-color" content="#E8F3F9" />
+  <link rel="icon" href="/palm.png" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts: Jaldi & Bona Nova SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Bona+Nova+SC&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind config: fonts + a few color tokens -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            skywash: '#E8F3F9',
+            ink: '#2A3C62',
+            slatey: '#4B5E88',
+            mist: '#99A5BF',
+          },
+          fontFamily: {
+            jaldi: ['Jaldi', 'sans-serif'],
+            bona: ['"Bona Nova SC"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+      .fade-in.is-visible { opacity: 1; transform: none; }
+    }
+
+    /* Mobile-specific improvements */
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .touch-manipulation { touch-action: manipulation; }
+      input, select, textarea { font-size: 16px; }
+      .mobile-spacing { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+    /* Smooth transitions for interactive elements */
+    button, a, input {
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body class="font-jaldi text-gray-800 bg-white">
+  <a href="#details" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-ink text-white px-3 py-2 rounded-lg">Skip to details</a>
+
+  <!-- Top Nav -->
+  <header class="fixed inset-x-0 top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b border-black/5">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <img src="palm.png" alt="Palm icon" class="h-6 w-6" />
+        <a href="index.html" class="font-bona tracking-wide text-ink hover:text-slatey transition-colors">Becca & Alexander</a>
+      </div>
+      <ul class="hidden md:flex items-center gap-6 text-slatey">
+        <li><a href="index.html" class="hover:text-ink transition-colors">Home</a></li>
+        <li><a href="details.html" class="text-ink font-medium transition-colors">Details</a></li>
+        <li><a href="photos.html" class="hover:text-ink transition-colors">Photos</a></li>
+        <li><a href="rsvp.html" class="hover:text-ink transition-colors">RSVP</a></li>
+        <li><a href="faq.html" class="hover:text-ink transition-colors">FAQ</a></li>
+        <li><a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Registry</a></li>
+      </ul>
+      <a href="rsvp.html" class="hidden md:inline-flex rounded-xl bg-ink text-white px-4 py-2 hover:bg-ink/90 transition-colors">RSVP</a>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Toggle mobile menu">
+        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-black/5">
+      <div class="px-4 py-3 space-y-3">
+        <a href="index.html" class="block py-2 text-slatey hover:text-ink transition-colors">Home</a>
+        <a href="details.html" class="block py-2 text-ink font-medium">Details</a>
+        <a href="photos.html" class="block py-2 text-slatey hover:text-ink transition-colors">Photos</a>
+        <a href="rsvp.html" class="block py-2 text-slatey hover:text-ink transition-colors">RSVP</a>
+        <a href="faq.html" class="block py-2 text-slatey hover:text-ink transition-colors">FAQ</a>
+        <a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="block py-2 text-slatey hover:text-ink transition-colors">Registry</a>
+        <a href="rsvp.html" class="block mt-3 rounded-xl bg-ink text-white px-4 py-2 text-center hover:bg-ink/90 transition-colors">RSVP Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-12 sm:pt-24 sm:pb-16 bg-gradient-to-b from-skywash/40 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="font-bona text-4xl sm:text-5xl md:text-6xl mb-4 text-ink">Event Details</h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-slatey max-w-3xl mx-auto leading-relaxed">
+        Everything you need to know about our special day
+      </p>
+    </div>
+  </section>
+
+  <!-- Details Content -->
+  <section id="details" class="py-12 sm:py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <!-- Main Event Details Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-12">
+        <!-- Location with Map -->
+        <div class="fade-in">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-4 text-center">📍 Location</h3>
+            <div class="text-center mb-6">
+              <p class="font-bona text-xl sm:text-2xl text-ink mb-2">Harbor View Loft</p>
+              <p class="text-slatey text-lg sm:text-xl mb-1">San Diego, CA</p>
+              <p class="text-slatey/80 text-base sm:text-lg">Downtown Waterfront District</p>
+            </div>
+
+            <!-- Map Embed -->
+            <div class="rounded-2xl overflow-hidden mb-6 shadow-lg">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.4!2d-117.2055394!3d32.7255581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80deabdd0530004d%3A0x4b793a8b15b4319b!2sHarbor%20View%20Loft%20-%20Best%20Wedding%20Venues%20San%20Diego!5e0!3m2!1sen!2sus!4v1000000000000!5m2!1sen!2sus"
+                width="100%"
+                height="200"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Harbor View Loft Location Map">
+              </iframe>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center">
+              <a target="_blank" rel="noopener" href="https://maps.apple.com/?q=Harbor+View+Loft+San+Diego" class="inline-flex items-center justify-center rounded-xl border border-ink/20 px-4 py-3 text-base sm:text-lg hover:bg-white transition-colors touch-manipulation">
+                📱 Apple Maps
+              </a>
+              <a target="_blank" rel="noopener" href="https://maps.google.com/?q=Harbor+View+Loft+San+Diego" class="inline-flex items-center justify-center rounded-xl border border-ink/20 px-4 py-3 text-base sm:text-lg hover:bg-white transition-colors touch-manipulation">
+                🗺️ Google Maps
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Date & Time -->
+        <div class="fade-in">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8 text-center h-full flex flex-col justify-center">
+            <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-6">🗓️ When</h3>
+            <p class="font-bona text-3xl sm:text-4xl text-ink mb-4">September 5, 2026</p>
+            <div class="space-y-3">
+              <p class="text-slatey text-lg sm:text-xl">🕒 Ceremony at 5:00 PM</p>
+              <p class="text-slatey text-lg sm:text-xl">🎉 Reception to follow</p>
+              <p class="text-slatey/80 text-base sm:text-lg">Celebration until 11:00 PM</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Details -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
+        <div class="fade-in rounded-3xl bg-skywash p-6 sm:p-8 text-center">
+          <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-4">👗 Dress Code</h3>
+          <p class="text-slatey text-lg sm:text-xl mb-2">Formal attire</p>
+          <p class="text-slatey/80 text-base sm:text-lg mt-2">Think elegant but comfortable!</p>
+        </div>
+
+        <div class="fade-in rounded-3xl bg-skywash p-6 sm:p-8 text-center">
+          <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-4">🌮 What to Expect</h3>
+          <div class="space-y-2">
+            <p class="text-slatey text-lg sm:text-xl">• Delicious tacos & drinks</p>
+            <p class="text-slatey text-lg sm:text-xl">• Harbor views & sunshine</p>
+            <p class="text-slatey text-lg sm:text-xl">• Lots of love & laughter</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Schedule -->
+      <div class="fade-in mb-12">
+        <h2 class="font-bona text-3xl sm:text-4xl text-ink mb-8 text-center">📋 Schedule</h2>
+        <div class="max-w-2xl mx-auto">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">4:30 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Guest Arrival</p>
+                  <p class="text-slatey">Welcome drinks available</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">5:00 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Ceremony</p>
+                  <p class="text-slatey">Exchange of vows with harbor views</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">5:30 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Cocktail Hour</p>
+                  <p class="text-slatey">Bar opens, passed bites & chef's market table</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">6:45 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Dinner</p>
+                  <p class="text-slatey">Dinner service begins</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">7:45 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Toasts</p>
+                  <p class="text-slatey">Speeches and celebrations</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">8:00 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">First Dances</p>
+                  <p class="text-slatey">First dance & parent dances</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">8:10 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Open Dancing</p>
+                  <p class="text-slatey">Hit the dance floor!</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">9:00 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Cake & Desserts</p>
+                  <p class="text-slatey">Cake cutting, dessert bar opens</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">9:30 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Late Night Snacks</p>
+                  <p class="text-slatey">Fuel up for more dancing</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">10:40 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Grand Exit</p>
+                  <p class="text-slatey">Send off the newlyweds!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center fade-in">
+        <a href="rsvp.html" class="inline-flex rounded-2xl bg-ink text-white px-8 py-4 text-lg font-medium shadow hover:shadow-md hover:bg-ink/90 transition-all">
+          RSVP Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
+      <div class="text-center md:text-left">
+        <p class="text-lg sm:text-xl leading-tight">The Ryan Wedding</p>
+        <p class="leading-tight text-sm sm:text-base">September 5, 2026</p>
+      </div>
+      <img src="palm.png" alt="Palm" class="w-6 sm:w-8 h-6 sm:h-8" />
+      <p class="text-gray-500 text-sm sm:text-base text-center md:text-right">Made with <span class="text-red-500">❤️</span> by Alexander</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // IntersectionObserver for subtle fade-ins
+    (function io(){
+      if(!('IntersectionObserver' in window)) return;
+      const obs = new IntersectionObserver((entries)=>{
+        for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); } }
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+    })();
+
+    // Mobile menu toggle
+    (function mobileMenu(){
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      if (!menuBtn || !menu) return;
+
+      menuBtn.addEventListener('click', function() {
+        const isHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden', !isHidden);
+
+        const svg = menuBtn.querySelector('svg path');
+        if (svg) {
+          if (isHidden) {
+            svg.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+          } else {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+
+      menu.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+          menu.classList.add('hidden');
+          const svg = menuBtn.querySelector('svg path');
+          if (svg) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          menu.classList.add('hidden');
+          const svg = menuBtn.querySelector('svg path');
+          if (svg) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

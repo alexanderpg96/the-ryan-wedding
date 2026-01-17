@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>FAQ — Becca & Alexander</title>
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="Frequently asked questions about Becca & Alexander's wedding on September 5, 2026 at Harbor View Loft in San Diego." />
+  <meta property="og:title" content="FAQ — Becca & Alexander" />
+  <meta property="og:description" content="Frequently asked questions about our wedding" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/hero.jpg" />
+  <meta name="theme-color" content="#E8F3F9" />
+  <link rel="icon" href="/palm.png" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts: Jaldi & Bona Nova SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Bona+Nova+SC&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind config: fonts + a few color tokens -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            skywash: '#E8F3F9',
+            ink: '#2A3C62',
+            slatey: '#4B5E88',
+            mist: '#99A5BF',
+          },
+          fontFamily: {
+            jaldi: ['Jaldi', 'sans-serif'],
+            bona: ['"Bona Nova SC"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+      .fade-in.is-visible { opacity: 1; transform: none; }
+    }
+
+    /* Mobile-specific improvements */
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .touch-manipulation { touch-action: manipulation; }
+      input, select, textarea { font-size: 16px; }
+      .mobile-spacing { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+    /* Smooth transitions for interactive elements */
+    button, a, input, details summary {
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body class="font-jaldi text-gray-800 bg-white">
+  <a href="#faq" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-ink text-white px-3 py-2 rounded-lg">Skip to FAQ</a>
+
+  <!-- Top Nav -->
+  <header class="fixed inset-x-0 top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b border-black/5">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <img src="palm.png" alt="Palm icon" class="h-6 w-6" />
+        <a href="index.html" class="font-bona tracking-wide text-ink hover:text-slatey transition-colors">Becca & Alexander</a>
+      </div>
+      <ul class="hidden md:flex items-center gap-6 text-slatey">
+        <li><a href="index.html" class="hover:text-ink transition-colors">Home</a></li>
+        <li><a href="details.html" class="hover:text-ink transition-colors">Details</a></li>
+        <li><a href="photos.html" class="hover:text-ink transition-colors">Photos</a></li>
+        <li><a href="rsvp.html" class="hover:text-ink transition-colors">RSVP</a></li>
+        <li><a href="faq.html" class="text-ink font-medium transition-colors">FAQ</a></li>
+        <li><a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Registry</a></li>
+      </ul>
+      <a href="rsvp.html" class="hidden md:inline-flex rounded-xl bg-ink text-white px-4 py-2 hover:bg-ink/90 transition-colors">RSVP</a>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Toggle mobile menu">
+        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-black/5">
+      <div class="px-4 py-3 space-y-3">
+        <a href="index.html" class="block py-2 text-slatey hover:text-ink transition-colors">Home</a>
+        <a href="details.html" class="block py-2 text-slatey hover:text-ink transition-colors">Details</a>
+        <a href="photos.html" class="block py-2 text-slatey hover:text-ink transition-colors">Photos</a>
+        <a href="rsvp.html" class="block py-2 text-slatey hover:text-ink transition-colors">RSVP</a>
+        <a href="faq.html" class="block py-2 text-ink font-medium">FAQ</a>
+        <a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="block py-2 text-slatey hover:text-ink transition-colors">Registry</a>
+        <a href="rsvp.html" class="block mt-3 rounded-xl bg-ink text-white px-4 py-2 text-center hover:bg-ink/90 transition-colors">RSVP Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-12 sm:pt-24 sm:pb-16 bg-gradient-to-b from-skywash/40 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="font-bona text-4xl sm:text-5xl md:text-6xl mb-4 text-ink">FAQ</h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-slatey max-w-3xl mx-auto leading-relaxed">
+        Answers to your questions about our big day
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Content -->
+  <section id="faq" class="py-12 sm:py-16 px-4">
+    <div class="max-w-3xl mx-auto">
+      <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
+        <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">Where should we stay?</summary>
+        <div class="mt-3 text-slatey text-sm sm:text-base">We'll share hotel block details soon. In the meantime, check downtown & Harbor Island for close options.</div>
+      </details>
+      <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
+        <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">Parking & transportation</summary>
+        <div class="mt-3 text-slatey text-sm sm:text-base">Rideshares are easy in the area. There is also plenty of on‑site parking available at the venue with validation provided by the venue.</div>
+      </details>
+      <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
+        <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">Can we bring kids?</summary>
+        <div class="mt-3 text-slatey text-sm sm:text-base">No kids this time—think of it as a big date night with all your friends! Get a sitter, grab a drink, and come ready to dance the night away.</div>
+      </details>
+      <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
+        <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">What's the dress code?</summary>
+        <div class="mt-3 text-slatey text-sm sm:text-base">Formal attire is requested. The ceremony and reception will have some outdoor elements, so we recommend comfortable shoes for ladies. Think elegant but comfortable!</div>
+      </details>
+      <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
+        <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">Will there be food options for dietary restrictions?</summary>
+        <div class="mt-3 text-slatey text-sm sm:text-base">Yes! Please let us know your dietary needs when you RSVP and we'll make sure you're taken care of. Our taco bar will have vegetarian and gluten-free options available.</div>
+      </details>
+      <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
+        <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">When should I RSVP by?</summary>
+        <div class="mt-3 text-slatey text-sm sm:text-base">Please RSVP by June 30, 2026 so we can finalize catering and seating arrangements. The sooner the better!</div>
+      </details>
+      <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
+        <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">Is there a registry?</summary>
+        <div class="mt-3 text-slatey text-sm sm:text-base">Yes! You can find our registry at <a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="text-ink underline hover:text-slatey">The Knot</a>. Your presence is the greatest gift, but if you'd like to give something, we'd truly appreciate it.</div>
+      </details>
+
+      <!-- CTA -->
+      <div class="text-center mt-12 sm:mt-16 fade-in">
+        <p class="text-lg sm:text-xl text-slatey mb-6">Ready to celebrate with us?</p>
+        <a href="rsvp.html" class="inline-flex rounded-2xl bg-ink text-white px-8 py-4 text-lg font-medium shadow hover:shadow-md hover:bg-ink/90 transition-all">
+          RSVP Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
+      <div class="text-center md:text-left">
+        <p class="text-lg sm:text-xl leading-tight">The Ryan Wedding</p>
+        <p class="leading-tight text-sm sm:text-base">September 5, 2026</p>
+      </div>
+      <img src="palm.png" alt="Palm" class="w-6 sm:w-8 h-6 sm:h-8" />
+      <p class="text-gray-500 text-sm sm:text-base text-center md:text-right">Made with <span class="text-red-500">❤️</span> by Alexander</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // IntersectionObserver for subtle fade-ins
+    (function io(){
+      if(!('IntersectionObserver' in window)) return;
+      const obs = new IntersectionObserver((entries)=>{
+        for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); } }
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+    })();
+
+    // Mobile menu toggle
+    (function mobileMenu(){
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      if (!menuBtn || !menu) return;
+
+      menuBtn.addEventListener('click', function() {
+        const isHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden', !isHidden);
+
+        const svg = menuBtn.querySelector('svg path');
+        if (svg) {
+          if (isHidden) {
+            svg.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+          } else {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+
+      menu.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+          menu.classList.add('hidden');
+          const svg = menuBtn.querySelector('svg path');
+          if (svg) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          menu.classList.add('hidden');
+          const svg = menuBtn.querySelector('svg path');
+          if (svg) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
