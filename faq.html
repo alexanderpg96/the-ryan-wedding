@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/hero.jpg" />
   <meta name="theme-color" content="#E8F3F9" />
-  <link rel="icon" href="/palm.png" />
+  <link rel="icon" href="/hydrangea.svg" />
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,6 +33,7 @@
             ink: '#2A3C62',
             slatey: '#4B5E88',
             mist: '#99A5BF',
+            hydrangea: '#5B8DB8',
           },
           fontFamily: {
             jaldi: ['Jaldi', 'sans-serif'],
@@ -72,7 +73,7 @@
   <header class="fixed inset-x-0 top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b border-black/5">
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center gap-2">
-        <img src="palm.png" alt="Palm icon" class="h-6 w-6" />
+        <img src="sailboat.svg" alt="Sailboat" class="h-6 w-6" />
         <a href="index.html" class="font-bona tracking-wide text-ink hover:text-slatey transition-colors">Becca & Alexander</a>
       </div>
       <ul class="hidden md:flex items-center gap-6 text-slatey">
@@ -117,12 +118,37 @@
     </div>
   </section>
 
+  <!-- Nautical & hydrangea flourish divider -->
+  <div class="flex items-center justify-center py-4 sm:py-6">
+    <svg class="w-64 sm:w-80 h-10 text-hydrangea/40" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 20 Q20 10 40 20 Q60 30 80 20 Q95 12 108 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <circle cx="118" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
+      <circle cx="124" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
+      <circle cx="122" cy="22" r="3" fill="currentColor" opacity="0.4"/>
+      <g transform="translate(160,20)" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7">
+        <circle cx="0" cy="-8" r="3"/>
+        <line x1="0" y1="-5" x2="0" y2="10"/>
+        <path d="M-7 6 Q0 14 7 6"/>
+        <line x1="-2" y1="0" x2="2" y2="0"/>
+      </g>
+      <circle cx="196" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
+      <circle cx="202" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
+      <circle cx="198" cy="22" r="3" fill="currentColor" opacity="0.4"/>
+      <path d="M212 20 Q225 12 240 20 Q260 30 280 20 Q300 10 320 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </svg>
+  </div>
+
   <!-- FAQ Content -->
   <section id="faq" class="py-12 sm:py-16 px-4">
     <div class="max-w-3xl mx-auto">
       <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
         <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">Where should we stay?</summary>
-        <div class="mt-3 text-slatey text-sm sm:text-base">We'll share hotel block details soon. In the meantime, check downtown & Harbor Island for close options.</div>
+        <div class="mt-3 text-slatey text-sm sm:text-base">We have special rates at two hotels:
+          <ul class="mt-2 space-y-2 list-disc list-inside">
+            <li><strong class="text-ink">Sheraton San Diego Resort</strong> — <a href="https://book.passkey.com/event/51122413/owner/563/home" target="_blank" rel="noopener" class="text-ink underline hover:text-slatey">Book our room block here</a></li>
+            <li><strong class="text-ink">Hilton San Diego Airport Harbor Island</strong> — Book at <a href="https://sandiegoairport.hilton.com" target="_blank" rel="noopener" class="text-ink underline hover:text-slatey">sandiegoairport.hilton.com</a> using corporate account code <span class="font-mono font-medium text-ink">0110175</span> for the special rate</li>
+          </ul>
+        </div>
       </details>
       <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
         <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">Parking & transportation</summary>
@@ -138,7 +164,7 @@
       </details>
       <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
         <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">Will there be food options for dietary restrictions?</summary>
-        <div class="mt-3 text-slatey text-sm sm:text-base">Yes! Please let us know your dietary needs when you RSVP and we'll make sure you're taken care of. Our taco bar will have vegetarian and gluten-free options available.</div>
+        <div class="mt-3 text-slatey text-sm sm:text-base">Yes! Please let us know your dietary needs when you RSVP and we'll make sure you're taken care of. Our taco bar will have vegetarian, vegan, and gluten-free options available.</div>
       </details>
       <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
         <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">When should I RSVP by?</summary>
@@ -147,6 +173,11 @@
       <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
         <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">Is there a registry?</summary>
         <div class="mt-3 text-slatey text-sm sm:text-base">Yes! You can find our registry at <a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="text-ink underline hover:text-slatey">The Knot</a>. Your presence is the greatest gift, but if you'd like to give something, we'd truly appreciate it.</div>
+      </details>
+
+      <details class="group rounded-2xl bg-white p-4 sm:p-5 mb-3 sm:mb-4 shadow-sm border border-ink/5 fade-in">
+        <summary class="cursor-pointer font-medium text-ink text-sm sm:text-base py-1 touch-manipulation">What is there to do in San Diego?</summary>
+        <div class="mt-3 text-slatey text-sm sm:text-base">More details coming soon!</div>
       </details>
 
       <!-- CTA -->
@@ -159,14 +190,21 @@
     </div>
   </section>
 
+  <!-- Wave separator -->
+  <div class="w-full overflow-hidden">
+    <svg class="w-full h-8 sm:h-12" viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 40 L0 20 Q150 0 300 20 Q450 40 600 20 Q750 0 900 20 Q1050 40 1200 20 L1200 40 Z" fill="#E8F3F9"/>
+    </svg>
+  </div>
+
   <!-- Footer -->
-  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash">
+  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash ">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
       <div class="text-center md:text-left">
         <p class="text-lg sm:text-xl leading-tight">The Ryan Wedding</p>
         <p class="leading-tight text-sm sm:text-base">September 5, 2026</p>
       </div>
-      <img src="palm.png" alt="Palm" class="w-6 sm:w-8 h-6 sm:h-8" />
+      <img src="sailboat.svg" alt="Sailboat" class="w-6 sm:w-8 h-6 sm:h-8" />
       <p class="text-gray-500 text-sm sm:text-base text-center md:text-right">Made with <span class="text-red-500">❤️</span> by Alexander</p>
     </div>
   </footer>

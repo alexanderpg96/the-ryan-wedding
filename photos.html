@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/hero.jpg" />
   <meta name="theme-color" content="#E8F3F9" />
-  <link rel="icon" href="/palm.png" />
+  <link rel="icon" href="/hydrangea.svg" />
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,6 +33,7 @@
             ink: '#2A3C62',
             slatey: '#4B5E88',
             mist: '#99A5BF',
+            hydrangea: '#5B8DB8',
           },
           fontFamily: {
             jaldi: ['Jaldi', 'sans-serif'],
@@ -82,7 +83,7 @@
   <header class="fixed inset-x-0 top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b border-black/5">
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center gap-2">
-        <img src="palm.png" alt="Palm icon" class="h-6 w-6" />
+        <img src="sailboat.svg" alt="Sailboat" class="h-6 w-6" />
         <a href="index.html" class="font-bona tracking-wide text-ink hover:text-slatey transition-colors">Becca & Alexander</a>
       </div>
       <ul class="hidden md:flex items-center gap-6 text-slatey">
@@ -152,14 +153,21 @@
     </div>
   </section>
 
+  <!-- Wave separator -->
+  <div class="w-full overflow-hidden">
+    <svg class="w-full h-8 sm:h-12" viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 40 L0 20 Q150 0 300 20 Q450 40 600 20 Q750 0 900 20 Q1050 40 1200 20 L1200 40 Z" fill="#E8F3F9"/>
+    </svg>
+  </div>
+
   <!-- Footer -->
-  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash">
+  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash ">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
       <div class="text-center md:text-left">
         <p class="text-lg sm:text-xl leading-tight">The Ryan Wedding</p>
         <p class="leading-tight text-sm sm:text-base">September 5, 2026</p>
       </div>
-      <img src="palm.png" alt="Palm" class="w-6 sm:w-8 h-6 sm:h-8" />
+      <img src="sailboat.svg" alt="Sailboat" class="w-6 sm:w-8 h-6 sm:h-8" />
       <p class="text-gray-500 text-sm sm:text-base text-center md:text-right">Made with <span class="text-red-500">❤️</span> by Alexander</p>
     </div>
   </footer>

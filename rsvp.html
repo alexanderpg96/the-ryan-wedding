@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/hero.jpg" />
   <meta name="theme-color" content="#E8F3F9" />
-  <link rel="icon" href="/palm.png" />
+  <link rel="icon" href="/hydrangea.svg" />
 
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -33,6 +33,7 @@
             ink: '#2A3C62',
             slatey: '#4B5E88',
             mist: '#99A5BF',
+            hydrangea: '#5B8DB8',
           },
           fontFamily: {
             jaldi: ['Jaldi', 'sans-serif'],
@@ -72,7 +73,7 @@
   <header class="fixed inset-x-0 top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b border-black/5">
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center gap-2">
-        <img src="palm.png" alt="Palm icon" class="h-6 w-6" />
+        <img src="sailboat.svg" alt="Sailboat" class="h-6 w-6" />
         <a href="index.html" class="font-bona tracking-wide text-ink hover:text-slatey transition-colors">Becca & Alexander</a>
       </div>
       <ul class="hidden md:flex items-center gap-6 text-slatey">
@@ -117,12 +118,35 @@
     </div>
   </section>
 
+  <!-- Nautical & hydrangea flourish divider -->
+  <div class="flex items-center justify-center py-4 sm:py-6">
+    <svg class="w-64 sm:w-80 h-10 text-hydrangea/40" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 20 Q20 10 40 20 Q60 30 80 20 Q95 12 108 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <circle cx="118" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
+      <circle cx="124" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
+      <circle cx="122" cy="22" r="3" fill="currentColor" opacity="0.4"/>
+      <g transform="translate(160,20)" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7">
+        <circle cx="0" cy="-8" r="3"/>
+        <line x1="0" y1="-5" x2="0" y2="10"/>
+        <path d="M-7 6 Q0 14 7 6"/>
+        <line x1="-2" y1="0" x2="2" y2="0"/>
+      </g>
+      <circle cx="196" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
+      <circle cx="202" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
+      <circle cx="198" cy="22" r="3" fill="currentColor" opacity="0.4"/>
+      <path d="M212 20 Q225 12 240 20 Q260 30 280 20 Q300 10 320 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </svg>
+  </div>
+
   <!-- RSVP Form -->
   <section id="rsvp" class="py-12 sm:py-16 px-4">
     <div class="max-w-2xl mx-auto">
       <form id="rsvpForm" class="space-y-6" action="https://formspree.io/f/xnnbgbev" method="POST">
         <!-- honeypot -->
         <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off" />
+
+        <!-- Guest lookup status -->
+        <div id="guestStatus" class="hidden rounded-2xl border border-ink/10 bg-skywash/50 px-4 py-3 text-slatey text-sm sm:text-base"></div>
 
         <!-- Guests list -->
         <div id="guestsList" class="space-y-4"></div>
@@ -146,14 +170,21 @@
     </div>
   </section>
 
+  <!-- Wave separator -->
+  <div class="w-full overflow-hidden">
+    <svg class="w-full h-8 sm:h-12" viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 40 L0 20 Q150 0 300 20 Q450 40 600 20 Q750 0 900 20 Q1050 40 1200 20 L1200 40 Z" fill="#E8F3F9"/>
+    </svg>
+  </div>
+
   <!-- Footer -->
-  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash">
+  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash ">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
       <div class="text-center md:text-left">
         <p class="text-lg sm:text-xl leading-tight">The Ryan Wedding</p>
         <p class="leading-tight text-sm sm:text-base">September 5, 2026</p>
       </div>
-      <img src="palm.png" alt="Palm" class="w-6 sm:w-8 h-6 sm:h-8" />
+      <img src="sailboat.svg" alt="Sailboat" class="w-6 sm:w-8 h-6 sm:h-8" />
       <p class="text-gray-500 text-sm sm:text-base text-center md:text-right">Made with <span class="text-red-500">❤️</span> by Alexander</p>
     </div>
   </footer>
@@ -211,18 +242,221 @@
       });
     })();
 
-    // === RSVP (Formspree) ===
+    // === RSVP (Formspree) with guest-list validation ===
     (function rsvpWithFormspree(){
       const list = document.getElementById('guestsList');
       const addBtn = document.getElementById('addGuest');
       const form = document.getElementById('rsvpForm');
       const msg = document.getElementById('rsvpMsg');
       const hiddenJSON = document.getElementById('guests_json');
+      const statusEl = document.getElementById('guestStatus');
 
       if(!list || !addBtn || !form) return;
 
+      // --- Guest list (inline for reliability — maintained via guests.csv) ---
+      const guestList = [
+        {household:"Mom & Oliver",party_size:2,plus_one:false},
+        {household:"Dad & Michelle",party_size:2,plus_one:false},
+        {household:"Grandma & Grandpa",party_size:2,plus_one:false},
+        {household:"Mimi & Bapa",party_size:2,plus_one:false},
+        {household:"Grandma Karin",party_size:1,plus_one:false},
+        {household:"Grandma Thompson",party_size:1,plus_one:false},
+        {household:"Grandma Julie & Grandpa Frank",party_size:2,plus_one:false},
+        {household:"Aunt Nina",party_size:1,plus_one:false},
+        {household:"The Keelers",party_size:4,plus_one:false},
+        {household:"Nancy & Jason",party_size:2,plus_one:false},
+        {household:"Papa & Esther",party_size:2,plus_one:false},
+        {household:"Susan & John",party_size:2,plus_one:false},
+        {household:"Uncle Ben & Jessa",party_size:2,plus_one:false},
+        {household:"Aunt Jackie & Uncle Ben",party_size:2,plus_one:false},
+        {household:"Aunt Sylvia & Uncle Justin",party_size:2,plus_one:false},
+        {household:"Uncle Pete & Lynne",party_size:2,plus_one:false},
+        {household:"Martha & Jim",party_size:2,plus_one:false},
+        {household:"Sofia Goulart",party_size:1,plus_one:false},
+        {household:"Mary-Taylor & Tyler",party_size:2,plus_one:false},
+        {household:"Uncle AJ",party_size:1,plus_one:false},
+        {household:"Colby & Gwen",party_size:2,plus_one:false},
+        {household:"Collin & Erin",party_size:2,plus_one:false},
+        {household:"Lauren & Danielle",party_size:2,plus_one:false},
+        {household:"John & Brittany",party_size:2,plus_one:false},
+        {household:"Hannah & Will",party_size:2,plus_one:false},
+        {household:"Liz",party_size:2,plus_one:true},
+        {household:"Tom & Vikasini",party_size:2,plus_one:false},
+        {household:"Faith & Tim Phagan",party_size:2,plus_one:false},
+        {household:"The Irwin Family",party_size:5,plus_one:false},
+        {household:"The Agabedis Family",party_size:5,plus_one:false},
+        {household:"Britton",party_size:2,plus_one:true},
+        {household:"Andrew & Tara",party_size:2,plus_one:false},
+        {household:"Gibby",party_size:1,plus_one:false},
+        {household:"Mom & Dad",party_size:2,plus_one:false},
+        {household:"Elisha",party_size:1,plus_one:false},
+        {household:"Janna Sokolow",party_size:1,plus_one:false},
+        {household:"Carolyn",party_size:1,plus_one:false},
+        {household:"Mia & Tim",party_size:2,plus_one:false},
+        {household:"Heidi & Craig Morrow",party_size:2,plus_one:false},
+        {household:"Danny & Allison",party_size:2,plus_one:false},
+        {household:"Ajay & Krista",party_size:2,plus_one:false},
+        {household:"Sonia Kuhls",party_size:1,plus_one:false},
+        {household:"Yulian & Sarah",party_size:2,plus_one:false},
+        {household:"Barbara & Jeff Langill",party_size:2,plus_one:false},
+        {household:"Vincent",party_size:1,plus_one:false},
+        {household:"Ron & Barbara Lenox",party_size:2,plus_one:false},
+        {household:"Jack Brent",party_size:1,plus_one:false},
+        {household:"Sienna Brent",party_size:1,plus_one:false},
+        {household:"Karla & Don McManus",party_size:2,plus_one:false},
+        {household:"Katie & Peyton",party_size:2,plus_one:false},
+        {household:"Rose & Matthew",party_size:2,plus_one:false},
+        {household:"Kristen & Matt",party_size:2,plus_one:false},
+        {household:"Julia & Dom",party_size:2,plus_one:false},
+        {household:"Molly & Stephen",party_size:2,plus_one:false},
+        {household:"Stephanie Szuter",party_size:1,plus_one:false},
+        {household:"Maddie & Jesus",party_size:2,plus_one:false},
+        {household:"Sarah & Lucas",party_size:2,plus_one:false},
+        {household:"Colin & Elena",party_size:2,plus_one:false},
+        {household:"Matt Knowles",party_size:1,plus_one:false},
+        {household:"Alex & Nathalia",party_size:2,plus_one:false},
+        {household:"Hayley Timmons",party_size:1,plus_one:false},
+        {household:"Meryl Braconnier",party_size:1,plus_one:false},
+        {household:"Erica Richard",party_size:1,plus_one:false},
+        {household:"Maria Ramos",party_size:1,plus_one:false},
+        {household:"Freddy Ramos",party_size:1,plus_one:false},
+        {household:"Tiana & VJ Bragg",party_size:2,plus_one:false},
+        {household:"Marisol & Kori Collons",party_size:2,plus_one:false},
+        {household:"Chandler & Laith",party_size:2,plus_one:false},
+        {household:"Annika Han",party_size:2,plus_one:true},
+        {household:"Marie Norwood",party_size:2,plus_one:true},
+        {household:"Marin Lannon",party_size:1,plus_one:false},
+        {household:"Laura Keane",party_size:1,plus_one:false},
+        {household:"Elizabeth Geary",party_size:2,plus_one:true},
+        {household:"Amy Sokolow",party_size:2,plus_one:true},
+        {household:"Maya & Trevor",party_size:2,plus_one:false},
+        {household:"Lauren & Luis",party_size:2,plus_one:false},
+        {household:"The Culbert Family",party_size:4,plus_one:false},
+        {household:"Ruth & John Kelly",party_size:2,plus_one:false},
+        {household:"Lane Hansen",party_size:2,plus_one:true},
+        {household:"Ginny & Steve Richard",party_size:2,plus_one:false},
+        {household:"Noel & Steve Smith",party_size:2,plus_one:false},
+        {household:"Dennis Bailey & Linda Hey",party_size:2,plus_one:false},
+        {household:"Rich Sokolow",party_size:2,plus_one:true},
+        {household:"Jim Yoder & Pam Artz",party_size:2,plus_one:false},
+        {household:"Camilla Yoder",party_size:1,plus_one:false},
+        {household:"Addy Yoder",party_size:1,plus_one:false},
+        {household:"Shaina & Tom Moffett",party_size:2,plus_one:false},
+        {household:"Tammy & Colin",party_size:2,plus_one:false},
+        {household:"Ana Portio",party_size:2,plus_one:true}
+      ];
+      let matchedHousehold = null;
       let counter = 0;
-      function guestTemplate(id){
+
+      // --- Name matching ---
+      // Tokenize a household name into matchable parts
+      function tokenize(name){
+        return name
+          .replace(/^The\s+/i, '')       // strip leading "The"
+          .replace(/\s+Family$/i, '')     // strip trailing "Family"
+          .split(/\s*[&,]\s*|\s+and\s+/i) // split on &, comma, "and"
+          .flatMap(part => part.trim().split(/\s+/)) // split remaining spaces into individual tokens
+          .filter(Boolean)
+          .map(t => t.toLowerCase());
+      }
+
+      function matchGuest(firstName, lastName){
+        const first = firstName.toLowerCase().trim();
+        const last = lastName.toLowerCase().trim();
+        if(!first && !last) return null;
+
+        let bestMatch = null;
+        let bestScore = 0;
+
+        for(const row of guestList){
+          const tokens = tokenize(row.household);
+
+          const firstExact = first && tokens.includes(first);
+          const lastExact  = last  && tokens.includes(last);
+          // Fuzzy: either string starts with the other (Alex/Alexander)
+          const firstFuzzy = first && tokens.some(t => t.startsWith(first) || first.startsWith(t));
+          const lastFuzzy  = last  && tokens.some(t => t.startsWith(last)  || last.startsWith(t));
+
+          let score = 0;
+          if(first && last){
+            // Both names provided — fuzzy is safe since the pair disambiguates
+            if(firstExact && lastExact)       score = 5;
+            else if(firstFuzzy && lastFuzzy)  score = 4;
+            else if(firstExact && lastFuzzy)  score = 3;
+            else if(firstFuzzy && lastExact)  score = 3;
+            else if(lastExact)                score = 2;
+            else if(firstExact)               score = 1;
+          } else {
+            // Only one name — require exact match to avoid Jack/Jackie collisions
+            if(firstExact || lastExact) score = 1;
+          }
+
+          if(score > bestScore){
+            bestScore = score;
+            bestMatch = row;
+          }
+        }
+        return bestMatch;
+      }
+
+      // --- UI updates for guest status ---
+      function showStatus(html, type){
+        statusEl.innerHTML = html;
+        statusEl.classList.remove('hidden', 'border-green-200', 'bg-green-50', 'border-amber-200', 'bg-amber-50');
+        if(type === 'success'){
+          statusEl.classList.add('border-green-200', 'bg-green-50');
+        } else if(type === 'warn'){
+          statusEl.classList.add('border-amber-200', 'bg-amber-50');
+        }
+      }
+
+      function hideStatus(){
+        statusEl.classList.add('hidden');
+        statusEl.innerHTML = '';
+      }
+
+      function updateAddButton(){
+        const guestCount = list.querySelectorAll('.guestCard').length;
+        if(matchedHousehold && guestCount >= matchedHousehold.party_size){
+          addBtn.disabled = true;
+          addBtn.classList.add('opacity-50', 'cursor-not-allowed');
+          addBtn.textContent = `Party limit reached (${matchedHousehold.party_size})`;
+        } else {
+          addBtn.disabled = false;
+          addBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          addBtn.textContent = '+ Add another person';
+        }
+      }
+
+      // --- Lookup triggered after first guest name blur ---
+      function tryLookup(){
+        const firstCard = list.querySelector('.guestCard');
+        if(!firstCard) return;
+        const firstName = (firstCard.querySelector('[data-field="first_name"]')?.value || '').trim();
+        const lastName = (firstCard.querySelector('[data-field="last_name"]')?.value || '').trim();
+
+        if(!firstName && !lastName){ hideStatus(); matchedHousehold = null; updateAddButton(); return; }
+
+        const match = matchGuest(firstName, lastName);
+        if(match){
+          matchedHousehold = match;
+          const plusNote = match.plus_one ? ' (includes a plus-one)' : '';
+          showStatus(
+            `<strong>Welcome!</strong> Your party can include up to <strong>${match.party_size}</strong> guest${match.party_size > 1 ? 's' : ''}${plusNote}.`,
+            'success'
+          );
+        } else {
+          matchedHousehold = null;
+          showStatus(
+            `We couldn't find that name on our guest list. You can still RSVP — we'll confirm your invitation.`,
+            'warn'
+          );
+        }
+        updateAddButton();
+      }
+
+      // --- Guest card template & management ---
+      function guestTemplate(){
         return `
           <div class="guestCard rounded-2xl border border-ink/10 p-4">
             <div class="flex items-start justify-between gap-3">
@@ -262,12 +496,17 @@
       }
 
       function addGuest(){
-        const id = ++counter;
+        if(matchedHousehold){
+          const guestCount = list.querySelectorAll('.guestCard').length;
+          if(guestCount >= matchedHousehold.party_size) return;
+        }
+        counter++;
         const wrapper = document.createElement('div');
-        wrapper.innerHTML = guestTemplate(id);
+        wrapper.innerHTML = guestTemplate();
         const node = wrapper.firstElementChild;
         list.appendChild(node);
         renumber();
+        updateAddButton();
       }
 
       function collectGuests(){
@@ -286,10 +525,22 @@
         return guests;
       }
 
-      // initial one
+      // --- Init ---
       addGuest();
 
       addBtn.addEventListener('click', addGuest);
+
+      // Listen for name input on the first guest card to trigger lookup
+      list.addEventListener('blur', (e)=>{
+        const t = e.target;
+        if(t && (t.matches('[data-field="first_name"]') || t.matches('[data-field="last_name"]'))){
+          // Only lookup based on the first guest card
+          const firstCard = list.querySelector('.guestCard');
+          if(t.closest('.guestCard') === firstCard){
+            tryLookup();
+          }
+        }
+      }, true); // use capture so blur (which doesn't bubble) is caught
 
       // delegation for remove + diet toggle
       list.addEventListener('click', (e)=>{
@@ -298,6 +549,9 @@
           const card = target.closest('.guestCard');
           card?.remove();
           renumber();
+          updateAddButton();
+          // Re-lookup if the first card was removed (new first card)
+          tryLookup();
         }
       });
 
@@ -319,7 +573,21 @@
           return;
         }
 
-        hiddenJSON.value = JSON.stringify(guests);
+        // Warn if first guest wasn't found on the list
+        if(guestList.length > 0 && !matchedHousehold){
+          const ok = confirm(
+            "We couldn't find your name on our guest list. " +
+            "You can still submit — we'll follow up to confirm. Continue?"
+          );
+          if(!ok){ msg.textContent = ''; return; }
+        }
+
+        // Include household match info in submission
+        const payload = {
+          guests,
+          matched_household: matchedHousehold ? matchedHousehold.household : null
+        };
+        hiddenJSON.value = JSON.stringify(payload);
 
         try {
           const res = await fetch(form.action, {
@@ -333,6 +601,8 @@
             msg.textContent = 'Thank you! We received your RSVP 💌';
             form.reset();
             list.innerHTML = '';
+            matchedHousehold = null;
+            hideStatus();
             addGuest();
           } else {
             msg.textContent = 'Something went wrong. Please try again.';
