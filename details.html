@@ -4,11 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Becca & Alexander — September 5, 2026</title>
+  <title>Event Details — Becca & Alexander</title>
 
   <!-- Meta / SEO -->
-  <meta name="description" content="Join Becca & Alexander in San Diego on September 5, 2026. Ceremony at 5 PM at Harbor View Loft — tacos, dancing, and sunshine!" />
-  <meta property="og:title" content="Becca & Alexander — 09·05·2026" />
+  <meta name="description" content="Event details for Becca & Alexander's wedding on September 5, 2026 at Harbor View Loft in San Diego." />
+  <meta property="og:title" content="Event Details — Becca & Alexander" />
   <meta property="og:description" content="Harbor View Loft • San Diego • Ceremony at 5 PM" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/hero.jpg" />
@@ -51,84 +51,19 @@
       .fade-in { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
       .fade-in.is-visible { opacity: 1; transform: none; }
     }
-    
 
-    
     /* Mobile-specific improvements */
     @media (max-width: 640px) {
-      /* Ensure text is readable on small screens */
       body { font-size: 16px; }
-      
-      /* Improve touch targets */
       .touch-manipulation { touch-action: manipulation; }
-      
-      /* Prevent zoom on input focus */
       input, select, textarea { font-size: 16px; }
-      
-      /* Better spacing for mobile */
       .mobile-spacing { padding-left: 1rem; padding-right: 1rem; }
-      
-      /* Hero image positioning for mobile */
-      #hero-image {
-        object-position: 90% !important;
-      }
-      
-      /* Smooth horizontal scrolling for photo gallery */
-      .overflow-x-auto {
-        -webkit-overflow-scrolling: touch;
-        scroll-behavior: smooth;
-      }
-      
-      /* Hide scrollbar but keep functionality */
-      .overflow-x-auto::-webkit-scrollbar {
-        display: none;
-      }
-      .overflow-x-auto {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
     }
-    
+
     /* Smooth transitions for interactive elements */
-    button, a, input, details summary {
+    button, a, input {
       transition: all 0.2s ease;
     }
-    
-    /* Emoji rain effect */
-    .emoji-rain {
-      position: fixed;
-      top: -50px;
-      z-index: 9999;
-      pointer-events: none;
-      font-size: 2rem;
-      user-select: none;
-    }
-    
-    .emoji-clickable {
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      display: inline-block;
-    }
-    
-    .emoji-clickable:hover {
-      transform: scale(1.2);
-    }
-    
-    @keyframes emojifall {
-      0% {
-        transform: translateY(-50px) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-      }
-    }
-    
-    .emoji-falling {
-      animation: emojifall linear forwards;
-    }
-    
   </style>
 </head>
 <body class="font-jaldi text-gray-800 bg-white">
@@ -139,17 +74,18 @@
     <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
       <div class="flex items-center gap-2">
         <img src="sailboat.svg" alt="Sailboat" class="h-6 w-6" />
-        <span class="font-bona tracking-wide text-ink">Becca & Alexander</span>
+        <a href="index.html" class="font-bona tracking-wide text-ink hover:text-slatey transition-colors">Becca & Alexander</a>
       </div>
       <ul class="hidden md:flex items-center gap-6 text-slatey">
-        <li><a href="details.html" class="hover:text-ink transition-colors">Details</a></li>
+        <li><a href="index.html" class="hover:text-ink transition-colors">Home</a></li>
+        <li><a href="details.html" class="text-ink font-medium transition-colors">Details</a></li>
         <li><a href="photos.html" class="hover:text-ink transition-colors">Photos</a></li>
         <li><a href="rsvp.html" class="hover:text-ink transition-colors">RSVP</a></li>
         <li><a href="faq.html" class="hover:text-ink transition-colors">FAQ</a></li>
         <li><a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Registry</a></li>
       </ul>
       <a href="rsvp.html" class="hidden md:inline-flex rounded-xl bg-ink text-white px-4 py-2 hover:bg-ink/90 transition-colors">RSVP</a>
-      
+
       <!-- Mobile menu button -->
       <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Toggle mobile menu">
         <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -157,11 +93,12 @@
         </svg>
       </button>
     </nav>
-    
+
     <!-- Mobile menu -->
     <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-black/5">
       <div class="px-4 py-3 space-y-3">
-        <a href="details.html" class="block py-2 text-slatey hover:text-ink transition-colors">Details</a>
+        <a href="index.html" class="block py-2 text-slatey hover:text-ink transition-colors">Home</a>
+        <a href="details.html" class="block py-2 text-ink font-medium">Details</a>
         <a href="photos.html" class="block py-2 text-slatey hover:text-ink transition-colors">Photos</a>
         <a href="rsvp.html" class="block py-2 text-slatey hover:text-ink transition-colors">RSVP</a>
         <a href="faq.html" class="block py-2 text-slatey hover:text-ink transition-colors">FAQ</a>
@@ -171,82 +108,38 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative w-full min-h-screen flex items-center justify-center text-white overflow-hidden">
-    <picture>
-      <source srcset="hero.jpg" />
-      <img id="hero-image" src="hero.jpg" alt="Sunlit coastal view of San Diego" class="absolute inset-0 w-full h-full object-cover object-center sm:object-center will-change-transform" decoding="async" style="object-position: center 30%;" />
-    </picture>
-    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/30"></div>
-
-    <div class="relative z-10 text-center px-4 pt-24 md:pt-28">
-      <p class="font-bona uppercase tracking-[0.2em] text-sm sm:text-base md:text-lg mb-4 sm:mb-6">We're getting married!</p>
-      <h1 class="font-bona text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-4 sm:mb-6 leading-tight">Becca &amp; Alexander</h1>
-      <p class="text-lg sm:text-xl md:text-2xl mb-1">September 5, 2026</p>
-      <p class="text-white/80 text-base sm:text-lg md:text-xl mb-6 sm:mb-8">San Diego, CA • Harbor View Loft</p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-        <a href="rsvp.html" class="w-full sm:w-auto rounded-2xl bg-white text-ink px-6 py-3 text-lg font-medium shadow hover:shadow-md transition-shadow">RSVP</a>
-        <a href="#details" class="w-full sm:w-auto rounded-2xl bg-white/10 backdrop-blur px-6 py-3 text-lg font-medium border border-white/30 hover:bg-white/15 transition-colors">Event Details</a>
-      </div>
-    </div>
-
-    <!-- Countdown bar: full width, centered content -->
-    <div class="absolute bottom-0 left-0 right-0 bg-skywash/95 text-[#566992]">
-      <div class="mx-auto max-w-4xl flex justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-10 px-4 py-3 sm:py-4 md:py-5 overflow-x-auto">
-        <div class="text-center flex-shrink-0">
-          <div class="font-bona text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-none" id="days">0</div>
-          <div class="text-xs sm:text-sm text-mist whitespace-nowrap">Days</div>
-        </div>
-        <div class="text-center flex-shrink-0">
-          <div class="font-bona text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-none" id="hours">0</div>
-          <div class="text-xs sm:text-sm text-mist whitespace-nowrap">Hours</div>
-        </div>
-        <div class="text-center flex-shrink-0">
-          <div class="font-bona text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-none" id="minutes">0</div>
-          <div class="text-xs sm:text-sm text-mist whitespace-nowrap">Minutes</div>
-        </div>
-        <div class="text-center flex-shrink-0">
-          <div class="font-bona text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-none" id="seconds">0</div>
-          <div class="text-xs sm:text-sm text-mist whitespace-nowrap">Seconds</div>
-        </div>
-      </div>
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-12 sm:pt-24 sm:pb-16 bg-gradient-to-b from-skywash/40 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="font-bona text-4xl sm:text-5xl md:text-6xl mb-4 text-ink">Event Details</h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-slatey max-w-3xl mx-auto leading-relaxed">
+        Everything you need to know about our special day
+      </p>
     </div>
   </section>
 
   <!-- Nautical & hydrangea flourish divider -->
-  <div class="flex items-center justify-center py-6 sm:py-8">
+  <div class="flex items-center justify-center py-4 sm:py-6">
     <svg class="w-64 sm:w-80 h-10 text-hydrangea/40" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Left wave line -->
       <path d="M0 20 Q20 10 40 20 Q60 30 80 20 Q95 12 108 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
-      <!-- Hydrangea cluster left -->
       <circle cx="118" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
       <circle cx="124" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
       <circle cx="122" cy="22" r="3" fill="currentColor" opacity="0.4"/>
-      <!-- Center anchor -->
       <g transform="translate(160,20)" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7">
         <circle cx="0" cy="-8" r="3"/>
         <line x1="0" y1="-5" x2="0" y2="10"/>
         <path d="M-7 6 Q0 14 7 6"/>
         <line x1="-2" y1="0" x2="2" y2="0"/>
       </g>
-      <!-- Hydrangea cluster right -->
       <circle cx="196" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
       <circle cx="202" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
       <circle cx="198" cy="22" r="3" fill="currentColor" opacity="0.4"/>
-      <!-- Right wave line -->
       <path d="M212 20 Q225 12 240 20 Q260 30 280 20 Q300 10 320 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
     </svg>
   </div>
 
-  <!-- Celebrate With Us -->
-  <section id="details" class="py-16 sm:py-20 px-4">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="font-bona text-4xl sm:text-5xl md:text-6xl mb-6 sm:mb-8 text-ink">Celebrate With Us!</h2>
-      <p class="mb-12 sm:mb-16 leading-relaxed text-xl sm:text-2xl md:text-2xl text-slatey px-2 max-w-3xl mx-auto">
-        Join us as we celebrate seven years of love, laughter, and adventure. We're thrilled to invite you to our wedding in sunny San Diego, where you'll enjoy dancing, delicious tacos, and festivities. We can't wait to welcome you to our special day! ❤️
-      </p>
-    </div>
-
+  <!-- Details Content -->
+  <section id="details" class="py-12 sm:py-16 px-4">
     <div class="max-w-6xl mx-auto">
       <!-- Main Event Details Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mb-12">
@@ -259,21 +152,21 @@
               <p class="text-slatey text-lg sm:text-xl mb-1">San Diego, CA</p>
               <p class="text-slatey/80 text-base sm:text-lg">Downtown Waterfront District</p>
             </div>
-            
+
             <!-- Map Embed -->
             <div class="rounded-2xl overflow-hidden mb-6 shadow-lg">
-              <iframe 
+              <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3356.4!2d-117.2055394!3d32.7255581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80deabdd0530004d%3A0x4b793a8b15b4319b!2sHarbor%20View%20Loft%20-%20Best%20Wedding%20Venues%20San%20Diego!5e0!3m2!1sen!2sus!4v1000000000000!5m2!1sen!2sus"
-                width="100%" 
-                height="200" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
+                width="100%"
+                height="200"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Harbor View Loft Location Map">
               </iframe>
             </div>
-            
+
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
               <a target="_blank" rel="noopener" href="https://maps.apple.com/?q=Harbor+View+Loft+San+Diego" class="inline-flex items-center justify-center rounded-xl border border-ink/20 px-4 py-3 text-base sm:text-lg hover:bg-white transition-colors touch-manipulation">
                 📱 Apple Maps
@@ -301,13 +194,13 @@
       </div>
 
       <!-- Additional Details -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-12">
         <div class="fade-in rounded-3xl bg-skywash p-6 sm:p-8 text-center">
           <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-4">👗 Dress Code</h3>
           <p class="text-slatey text-lg sm:text-xl mb-2">Formal attire</p>
           <p class="text-slatey/80 text-base sm:text-lg mt-2">Think elegant but comfortable!</p>
         </div>
-        
+
         <div class="fade-in rounded-3xl bg-skywash p-6 sm:p-8 text-center">
           <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-4">🌮 What to Expect</h3>
           <div class="space-y-2">
@@ -318,10 +211,182 @@
         </div>
       </div>
 
-      <!-- Learn More Button -->
-      <div class="text-center mt-12">
-        <a href="details.html" class="inline-flex rounded-2xl bg-ink text-white px-8 py-4 text-lg font-medium shadow hover:shadow-md hover:bg-ink/90 transition-all">
-          Learn More
+      <!-- Anchor divider -->
+      <div class="flex items-center justify-center my-4">
+        <svg class="w-40 sm:w-56 h-6 text-hydrangea/30" viewBox="0 0 224 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 12 Q25 4 50 12 Q75 20 100 12" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <g transform="translate(112,12)" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.7">
+            <circle cx="0" cy="-6" r="2.5"/>
+            <line x1="0" y1="-3.5" x2="0" y2="8"/>
+            <path d="M-5.5 5 Q0 11 5.5 5"/>
+            <line x1="-1.5" y1="1" x2="1.5" y2="1"/>
+          </g>
+          <path d="M124 12 Q149 4 174 12 Q199 20 224 12" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- Accommodations -->
+      <div class="fade-in mb-12">
+        <h2 class="font-bona text-3xl sm:text-4xl text-ink mb-3 text-center">🏨 Accommodations</h2>
+        <p class="text-center text-slatey mb-8 text-lg">We've arranged special rates at two nearby hotels</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+          <!-- Sheraton -->
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8 text-center flex flex-col">
+            <h3 class="font-bona text-xl sm:text-2xl text-ink mb-4">Sheraton San Diego Resort</h3>
+            <p class="text-slatey text-base sm:text-lg mb-4 flex-grow">Room block available at a special group rate.</p>
+            <a href="https://book.passkey.com/event/51122413/owner/563/home" target="_blank" rel="noopener" class="inline-flex justify-center rounded-xl bg-ink text-white px-5 py-3 text-base font-medium hover:bg-ink/90 transition-colors touch-manipulation">
+              Book Room Block
+            </a>
+          </div>
+
+          <!-- Hilton -->
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8 text-center flex flex-col">
+            <h3 class="font-bona text-xl sm:text-2xl text-ink mb-4">Hilton San Diego Airport Harbor Island</h3>
+            <p class="text-slatey text-base sm:text-lg mb-2">Special rate available using corporate account code:</p>
+            <p class="font-mono text-ink text-lg font-medium bg-white/60 rounded-lg px-3 py-2 inline-block mb-4 flex-grow">0110175</p>
+            <a href="https://sandiegoairport.hilton.com" target="_blank" rel="noopener" class="inline-flex justify-center rounded-xl bg-ink text-white px-5 py-3 text-base font-medium hover:bg-ink/90 transition-colors touch-manipulation">
+              Book at Hilton
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hydrangea divider -->
+      <div class="flex items-center justify-center my-4">
+        <svg class="w-40 sm:w-56 h-6 text-hydrangea/30" viewBox="0 0 224 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 12h80" stroke="currentColor" stroke-width="1"/>
+          <circle cx="96" cy="10" r="3" fill="currentColor" opacity="0.5"/>
+          <circle cx="102" cy="14" r="3" fill="currentColor" opacity="0.6"/>
+          <circle cx="112" cy="10" r="3.5" fill="currentColor" opacity="0.7"/>
+          <circle cx="122" cy="14" r="3" fill="currentColor" opacity="0.6"/>
+          <circle cx="128" cy="10" r="3" fill="currentColor" opacity="0.5"/>
+          <path d="M144 12h80" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <!-- Schedule -->
+      <div class="fade-in mb-12">
+        <h2 class="font-bona text-3xl sm:text-4xl text-ink mb-8 text-center">📋 Schedule</h2>
+        <div class="max-w-2xl mx-auto">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">4:30 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Guest Arrival</p>
+                  <p class="text-slatey">Welcome drinks available</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">5:00 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Ceremony</p>
+                  <p class="text-slatey">Exchange of vows with harbor views</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">5:30 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Cocktail Hour</p>
+                  <p class="text-slatey">Bar opens, passed bites & chef's market table</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">6:45 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Dinner</p>
+                  <p class="text-slatey">Dinner service begins</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">7:45 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Toasts</p>
+                  <p class="text-slatey">Speeches and celebrations</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">8:00 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">First Dances</p>
+                  <p class="text-slatey">First dance & parent dances</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">8:10 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Open Dancing</p>
+                  <p class="text-slatey">Hit the dance floor!</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">9:00 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Cake & Desserts</p>
+                  <p class="text-slatey">Cake cutting, dessert bar opens</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">9:30 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Late Night Snacks</p>
+                  <p class="text-slatey">Fuel up for more dancing</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="font-bona text-xl sm:text-2xl text-ink whitespace-nowrap">10:40 PM</div>
+                <div>
+                  <p class="text-ink font-medium text-lg sm:text-xl">Grand Exit</p>
+                  <p class="text-slatey">Send off the newlyweds!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anchor divider -->
+      <div class="flex items-center justify-center my-4">
+        <svg class="w-40 sm:w-56 h-6 text-hydrangea/30" viewBox="0 0 224 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 12 Q25 4 50 12 Q75 20 100 12" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <g transform="translate(112,12)" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.7">
+            <circle cx="0" cy="-6" r="2.5"/>
+            <line x1="0" y1="-3.5" x2="0" y2="8"/>
+            <path d="M-5.5 5 Q0 11 5.5 5"/>
+            <line x1="-1.5" y1="1" x2="1.5" y2="1"/>
+          </g>
+          <path d="M124 12 Q149 4 174 12 Q199 20 224 12" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- Pre-Wedding Events -->
+      <div class="fade-in mb-12">
+        <h2 class="font-bona text-3xl sm:text-4xl text-ink mb-3 text-center">🎊 Pre-Wedding Events</h2>
+        <p class="text-center text-slatey mb-8 text-lg">September 4, 2026 — For bridal party & immediate family</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-4xl mx-auto">
+          <!-- Welcome Party -->
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8 text-center">
+            <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-4">🍻 Welcome Party</h3>
+            <div class="space-y-2">
+              <p class="text-slatey/80 text-base sm:text-lg mt-3">Details coming soon!</p>
+            </div>
+          </div>
+
+          <!-- Rehearsal Dinner -->
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8 text-center">
+            <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-4">🍽️ Rehearsal Dinner</h3>
+            <div class="space-y-2">
+              <p class="text-slatey text-lg sm:text-xl">Bridal party only</p>
+              <p class="text-slatey/80 text-base sm:text-lg mt-3">Details coming soon!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center fade-in">
+        <a href="rsvp.html" class="inline-flex rounded-2xl bg-ink text-white px-8 py-4 text-lg font-medium shadow hover:shadow-md hover:bg-ink/90 transition-all">
+          RSVP Now
         </a>
       </div>
     </div>
@@ -348,26 +413,6 @@
 
   <!-- Scripts -->
   <script>
-    // Robust countdown (America/Los_Angeles, 2026-09-05 17:00)
-    (function countdown(){
-      const els = { d: document.getElementById('days'), h: document.getElementById('hours'), m: document.getElementById('minutes'), s: document.getElementById('seconds') };
-      const target = new Date('2026-09-05T17:00:00-07:00').getTime();
-      function tick(){
-        const now = Date.now();
-        let diff = Math.max(0, target - now);
-        const days = Math.floor(diff / (1000*60*60*24)); diff -= days*24*60*60*1000;
-        const hours = Math.floor(diff / (1000*60*60)); diff -= hours*60*60*1000;
-        const minutes = Math.floor(diff / (1000*60)); diff -= minutes*60*1000;
-        const seconds = Math.floor(diff / 1000);
-        if(els.d) els.d.textContent = days;
-        if(els.h) els.h.textContent = hours;
-        if(els.m) els.m.textContent = minutes;
-        if(els.s) els.s.textContent = seconds;
-      }
-      tick();
-      setInterval(tick, 1000);
-    })();
-
     // IntersectionObserver for subtle fade-ins
     (function io(){
       if(!('IntersectionObserver' in window)) return;
@@ -377,68 +422,27 @@
       document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
     })();
 
-    // Parallax effect for hero image
-    (function parallax(){
-      const heroImage = document.getElementById('hero-image');
-      if(!heroImage) return;
-      
-      let ticking = false;
-      
-      function updateParallax() {
-        const scrolled = window.pageYOffset;
-        const viewportHeight = window.innerHeight;
-        
-        // Only apply parallax when hero is visible (performance optimization)
-        if (scrolled < viewportHeight * 1.2) {
-          // Move the image slower than scroll (0.5x speed for subtle effect)
-          const yPos = scrolled * 0.5;
-          heroImage.style.transform = `translate3d(0, ${yPos}px, 0)`;
-        }
-        
-        ticking = false;
-      }
-      
-      function requestTick() {
-        if (!ticking) {
-          requestAnimationFrame(updateParallax);
-          ticking = true;
-        }
-      }
-      
-      // Listen for scroll events
-      window.addEventListener('scroll', requestTick, { passive: true });
-      
-      // Initial call
-      updateParallax();
-    })();
-  </script>
-
-  <script>
     // Mobile menu toggle
     (function mobileMenu(){
       const menuBtn = document.getElementById('mobile-menu-btn');
       const menu = document.getElementById('mobile-menu');
-      
+
       if (!menuBtn || !menu) return;
-      
+
       menuBtn.addEventListener('click', function() {
         const isHidden = menu.classList.contains('hidden');
         menu.classList.toggle('hidden', !isHidden);
-        
-        // Update button icon
+
         const svg = menuBtn.querySelector('svg path');
         if (svg) {
           if (isHidden) {
-            // Show X icon
             svg.setAttribute('d', 'M6 18L18 6M6 6l12 12');
           } else {
-            // Show hamburger icon
             svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
           }
         }
       });
-      
-      // Close menu when clicking on links
+
       menu.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
           menu.classList.add('hidden');
@@ -448,8 +452,7 @@
           }
         }
       });
-      
-      // Close menu on window resize to desktop
+
       window.addEventListener('resize', function() {
         if (window.innerWidth >= 768) {
           menu.classList.add('hidden');
@@ -459,104 +462,6 @@
           }
         }
       });
-    })();
-    
-    // Emoji rain effect
-    (function emojiRain(){
-      function createEmojiRain(emoji) {
-        // Create multiple emoji drops for better effect
-        const numDrops = Math.floor(Math.random() * 15) + 10; // 10-25 emojis
-        
-        for (let i = 0; i < numDrops; i++) {
-          setTimeout(() => {
-            const emojiElement = document.createElement('div');
-            emojiElement.className = 'emoji-rain emoji-falling';
-            emojiElement.textContent = emoji;
-            
-            // Random horizontal position
-            const randomX = Math.random() * window.innerWidth;
-            emojiElement.style.left = randomX + 'px';
-            
-            // Random animation duration (2-4 seconds)
-            const duration = Math.random() * 2 + 2;
-            emojiElement.style.animationDuration = duration + 's';
-            
-            // Add slight rotation variation
-            const rotationSpeed = Math.random() * 2 + 1;
-            emojiElement.style.animationTimingFunction = 'linear';
-            
-            document.body.appendChild(emojiElement);
-            
-            // Remove element after animation completes
-            setTimeout(() => {
-              if (emojiElement.parentNode) {
-                emojiElement.parentNode.removeChild(emojiElement);
-              }
-            }, duration * 1000);
-          }, i * 100); // Stagger the drops
-        }
-      }
-      
-      // Make emojis clickable
-      function makeEmojisClickable() {
-        // Define emoji patterns to match
-        const emojiRegex = /❤️|📍|🗺️|📱|🗓️|🕒|🎉|👗|🌮|♥|💌/g;
-        
-        // Find all text nodes containing emojis
-        const walker = document.createTreeWalker(
-          document.body,
-          NodeFilter.SHOW_TEXT,
-          null,
-          false
-        );
-        
-        const textNodes = [];
-        let node;
-        while (node = walker.nextNode()) {
-          if (emojiRegex.test(node.textContent)) {
-            textNodes.push(node);
-          }
-        }
-        
-        // Replace emoji text with clickable spans
-        textNodes.forEach(textNode => {
-          const parent = textNode.parentNode;
-          const text = textNode.textContent;
-          
-          // Split text and wrap emojis in clickable spans
-          const parts = text.split(emojiRegex);
-          const matches = text.match(emojiRegex) || [];
-          
-          const fragment = document.createDocumentFragment();
-          
-          for (let i = 0; i < parts.length; i++) {
-            if (parts[i]) {
-              fragment.appendChild(document.createTextNode(parts[i]));
-            }
-            
-            if (matches[i]) {
-              const span = document.createElement('span');
-              span.className = 'emoji-clickable';
-              span.textContent = matches[i];
-              span.style.cursor = 'pointer';
-              span.addEventListener('click', (e) => {
-                e.preventDefault();
-                createEmojiRain(matches[i]);
-              });
-              fragment.appendChild(span);
-            }
-          }
-          
-          parent.replaceChild(fragment, textNode);
-        });
-      }
-      
-      // Initialize when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', makeEmojisClickable);
-      } else {
-        makeEmojisClickable();
-      }
     })();
   </script>
 </body>

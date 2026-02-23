@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Sailboat icon -->
+  <!-- Main sail -->
+  <path d="M32 8 L32 40 L14 40 Z" fill="#5B8DB8" opacity="0.85"/>
+  <!-- Jib sail -->
+  <path d="M32 12 L32 36 L42 36 Z" fill="#7BA7CC" opacity="0.75"/>
+  <!-- Mast -->
+  <line x1="32" y1="6" x2="32" y2="42" stroke="#2A3C62" stroke-width="1.5"/>
+  <!-- Hull -->
+  <path d="M10 42 L54 42 L48 52 L16 52 Z" fill="#2A3C62"/>
+  <!-- Water line -->
+  <path d="M4 54 Q16 48 28 54 Q40 60 52 54 Q58 51 62 54" stroke="#5B8DB8" stroke-width="2" fill="none" opacity="0.5"/>
+  <!-- Flag -->
+  <path d="M32 6 L38 9 L32 12" fill="#E8F3F9"/>
+</svg>

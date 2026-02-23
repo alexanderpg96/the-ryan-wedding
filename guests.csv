@@ -1,0 +1,92 @@
+household,party_size,plus_one
+# NOTE: Some rows use informal names (Mom, Dad, Grandma, Uncle, Aunt, Mimi, Bapa, Papa, Gibby, Elisha, Carolyn, etc.)
+# Replace these with real first/last names so RSVP matching works.
+Mom & Oliver,2,no
+Dad & Michelle,2,no
+Grandma & Grandpa,2,no
+Mimi & Bapa,2,no
+Grandma Karin,1,no
+Grandma Thompson,1,no
+Grandma Julie & Grandpa Frank,2,no
+Aunt Nina,1,no
+The Keelers,4,no
+Nancy & Jason,2,no
+Papa & Esther,2,no
+Susan & John,2,no
+Uncle Ben & Jessa,2,no
+Aunt Jackie & Uncle Ben,2,no
+Aunt Sylvia & Uncle Justin,2,no
+Uncle Pete & Lynne,2,no
+Martha & Jim,2,no
+Sofia Goulart,1,no
+Mary-Taylor & Tyler,2,no
+Uncle AJ,1,no
+Colby & Gwen,2,no
+Collin & Erin,2,no
+Lauren & Danielle,2,no
+John & Brittany,2,no
+Hannah & Will,2,no
+Liz,2,yes
+Tom & Vikasini,2,no
+Faith & Tim Phagan,2,no
+The Irwin Family,5,no
+The Agabedis Family,5,no
+Britton,2,yes
+Andrew & Tara,2,no
+Gibby,1,no
+Mom & Dad,2,no
+Elisha,1,no
+Janna Sokolow,1,no
+Carolyn,1,no
+Mia & Tim,2,no
+Heidi & Craig Morrow,2,no
+Danny & Allison,2,no
+Ajay & Krista,2,no
+Sonia Kuhls,1,no
+Yulian & Sarah,2,no
+Barbara & Jeff Langill,2,no
+Vincent,1,no
+Ron & Barbara Lenox,2,no
+Jack Brent,1,no
+Sienna Brent,1,no
+Karla & Don McManus,2,no
+Katie & Peyton,2,no
+Rose & Matthew,2,no
+Kristen & Matt,2,no
+Julia & Dom,2,no
+Molly & Stephen,2,no
+Stephanie Szuter,1,no
+Maddie & Jesus,2,no
+Sarah & Lucas,2,no
+Colin & Elena,2,no
+Matt Knowles,1,no
+Alex & Nathalia,2,no
+Hayley Timmons,1,no
+Meryl Braconnier,1,no
+Erica Richard,1,no
+Maria Ramos,1,no
+Freddy Ramos,1,no
+Tiana & VJ Bragg,2,no
+Marisol & Kori Collons,2,no
+Chandler & Laith,2,no
+Annika Han,2,yes
+Marie Norwood,2,yes
+Marin Lannon,1,no
+Laura Keane,1,no
+Elizabeth Geary,2,yes
+Amy Sokolow,2,yes
+Maya & Trevor,2,no
+Lauren & Luis,2,no
+The Culbert Family,4,no
+Ruth & John Kelly,2,no
+Lane Hansen,2,yes
+Ginny & Steve Richard,2,no
+Noel & Steve Smith,2,no
+Dennis Bailey & Linda Hey,2,no
+Rich Sokolow,2,yes
+Jim Yoder & Pam Artz,2,no
+Camilla Yoder,1,no
+Addy Yoder,1,no
+Shaina & Tom Moffett,2,no
+Tammy & Colin,2,no
+Ana Portio,2,yes
