@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>San Diego Guide — Becca & Alexander</title>
+
+  <!-- Meta / SEO -->
+  <meta name="description" content="San Diego recommendations from Becca & Alexander — beaches, restaurants, breweries, and more for our wedding weekend!" />
+  <meta property="og:title" content="San Diego Guide — Becca & Alexander" />
+  <meta property="og:description" content="Our favorite spots and must-see attractions in San Diego" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/hero.jpg" />
+  <meta name="theme-color" content="#E8F3F9" />
+  <link rel="icon" href="/hydrangea.svg" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts: Jaldi & Bona Nova SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jaldi&family=Bona+Nova+SC&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind config: fonts + a few color tokens -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            skywash: '#E8F3F9',
+            ink: '#2A3C62',
+            slatey: '#4B5E88',
+            mist: '#99A5BF',
+            hydrangea: '#5B8DB8',
+          },
+          fontFamily: {
+            jaldi: ['Jaldi', 'sans-serif'],
+            bona: ['"Bona Nova SC"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-in { opacity: 0; transform: translateY(8px); transition: opacity .6s ease, transform .6s ease; }
+      .fade-in.is-visible { opacity: 1; transform: none; }
+    }
+
+    /* Mobile-specific improvements */
+    @media (max-width: 640px) {
+      body { font-size: 16px; }
+      .touch-manipulation { touch-action: manipulation; }
+      input, select, textarea { font-size: 16px; }
+      .mobile-spacing { padding-left: 1rem; padding-right: 1rem; }
+    }
+
+    /* Smooth transitions for interactive elements */
+    button, a, input {
+      transition: all 0.2s ease;
+    }
+  </style>
+</head>
+<body class="font-jaldi text-gray-800 bg-white">
+  <a href="#guide" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-ink text-white px-3 py-2 rounded-lg">Skip to guide</a>
+
+  <!-- Top Nav -->
+  <header class="fixed inset-x-0 top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/80 border-b border-black/5">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="flex items-center gap-2">
+        <img src="sailboat.svg" alt="Sailboat" class="h-6 w-6" />
+        <a href="index.html" class="font-bona tracking-wide text-ink hover:text-slatey transition-colors">Becca & Alexander</a>
+      </div>
+      <ul class="hidden md:flex items-center gap-6 text-slatey">
+        <li><a href="index.html" class="hover:text-ink transition-colors">Home</a></li>
+        <li><a href="details.html" class="hover:text-ink transition-colors">Details</a></li>
+        <li><a href="san-diego.html" class="text-ink font-medium transition-colors">San Diego</a></li>
+        <li><a href="photos.html" class="hover:text-ink transition-colors">Photos</a></li>
+        <li><a href="rsvp.html" class="hover:text-ink transition-colors">RSVP</a></li>
+        <li><a href="faq.html" class="hover:text-ink transition-colors">FAQ</a></li>
+        <li><a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="hover:text-ink transition-colors">Registry</a></li>
+      </ul>
+      <a href="rsvp.html" class="hidden md:inline-flex rounded-xl bg-ink text-white px-4 py-2 hover:bg-ink/90 transition-colors">RSVP</a>
+
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Toggle mobile menu">
+        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-black/5">
+      <div class="px-4 py-3 space-y-3">
+        <a href="index.html" class="block py-2 text-slatey hover:text-ink transition-colors">Home</a>
+        <a href="details.html" class="block py-2 text-slatey hover:text-ink transition-colors">Details</a>
+        <a href="san-diego.html" class="block py-2 text-ink font-medium">San Diego</a>
+        <a href="photos.html" class="block py-2 text-slatey hover:text-ink transition-colors">Photos</a>
+        <a href="rsvp.html" class="block py-2 text-slatey hover:text-ink transition-colors">RSVP</a>
+        <a href="faq.html" class="block py-2 text-slatey hover:text-ink transition-colors">FAQ</a>
+        <a href="https://registry.theknot.com/-september-2026-ca/70260543" target="_blank" rel="noopener" class="block py-2 text-slatey hover:text-ink transition-colors">Registry</a>
+        <a href="rsvp.html" class="block mt-3 rounded-xl bg-ink text-white px-4 py-2 text-center hover:bg-ink/90 transition-colors">RSVP Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-12 sm:pt-24 sm:pb-16 bg-gradient-to-b from-skywash/40 to-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="font-bona text-4xl sm:text-5xl md:text-6xl mb-4 text-ink">San Diego Guide</h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-slatey max-w-3xl mx-auto leading-relaxed">
+        Our favorite spots and must-see attractions for your visit
+      </p>
+    </div>
+  </section>
+
+  <!-- Hero image -->
+  <section class="px-4">
+    <div class="max-w-5xl mx-auto">
+      <img src="san-diego-images/san-diego-general.png" alt="San Diego skyline" class="rounded-3xl max-w-md sm:max-w-lg mx-auto w-full" />
+    </div>
+  </section>
+
+  <!-- Nautical & hydrangea flourish divider -->
+  <div class="flex items-center justify-center py-4 sm:py-6">
+    <svg class="w-64 sm:w-80 h-10 text-hydrangea/40" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 20 Q20 10 40 20 Q60 30 80 20 Q95 12 108 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+      <circle cx="118" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
+      <circle cx="124" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
+      <circle cx="122" cy="22" r="3" fill="currentColor" opacity="0.4"/>
+      <g transform="translate(160,20)" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7">
+        <circle cx="0" cy="-8" r="3"/>
+        <line x1="0" y1="-5" x2="0" y2="10"/>
+        <path d="M-7 6 Q0 14 7 6"/>
+        <line x1="-2" y1="0" x2="2" y2="0"/>
+      </g>
+      <circle cx="196" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
+      <circle cx="202" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
+      <circle cx="198" cy="22" r="3" fill="currentColor" opacity="0.4"/>
+      <path d="M212 20 Q225 12 240 20 Q260 30 280 20 Q300 10 320 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </svg>
+  </div>
+
+  <!-- Guide Content -->
+  <section id="guide" class="py-8 sm:py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+
+      <!-- ========== GENERAL RECOMMENDATIONS ========== -->
+      <h2 class="font-bona text-3xl sm:text-4xl text-ink mb-10 text-center">General San Diego Recommendations</h2>
+
+      <!-- Beach & Coastal Favorites -->
+      <div class="mb-16">
+        <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-8 text-center">🌊 Beach & Coastal Favorites</h3>
+
+        <!-- Coronado Beach -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🏖 Coronado Beach</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Wide sandy beaches and postcard-worthy sunsets. Perfect for a morning walk or sunset stroll.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/coronado-1.jpeg" alt="Coronado Beach" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/coronado-2.jpeg" alt="Coronado Beach" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/coronado-3.jpeg" alt="Coronado Beach" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Pacific Beach & Mission Beach -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🌊 Pacific Beach & Mission Beach</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Stroll (or bike!) along the boardwalk, grab fish tacos or a smoothie, ride the historic roller coaster at Belmont Park, or simply relax and soak up the sun.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/mbpb-1.png" alt="Pacific Beach & Mission Beach" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/mbpb-2.png" alt="Pacific Beach & Mission Beach" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/mbpb-3.jpeg" alt="Pacific Beach & Mission Beach" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- La Jolla Cove -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🌅 La Jolla Cove</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Cliffside views, sea lions, and crystal-clear water — one of the most iconic spots in San Diego.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/lajolla1.jpeg" alt="La Jolla Cove" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/lajolla2.jpeg" alt="La Jolla Cove" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/lajolla3.jpeg" alt="La Jolla Cove" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Sunset Cliffs -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🌊 Sunset Cliffs</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Stunning sunset views along dramatic ocean cliffs in Ocean Beach.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/sunset-1.jpeg" alt="Sunset Cliffs" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/sunset2.jpeg" alt="Sunset Cliffs" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/sunset3.jpeg" alt="Sunset Cliffs" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anchor divider -->
+      <div class="flex items-center justify-center my-4">
+        <svg class="w-40 sm:w-56 h-6 text-hydrangea/30" viewBox="0 0 224 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 12 Q25 4 50 12 Q75 20 100 12" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <g transform="translate(112,12)" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.7">
+            <circle cx="0" cy="-6" r="2.5"/>
+            <line x1="0" y1="-3.5" x2="0" y2="8"/>
+            <path d="M-5.5 5 Q0 11 5.5 5"/>
+            <line x1="-1.5" y1="1" x2="1.5" y2="1"/>
+          </g>
+          <path d="M124 12 Q149 4 174 12 Q199 20 224 12" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- Classic San Diego Attractions -->
+      <div class="mb-16">
+        <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-8 text-center">🌴 Classic San Diego Attractions</h3>
+
+        <!-- Balboa Park -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🌿 Balboa Park</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Beautiful Spanish architecture, gardens, museums, and walking paths all in one place.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/balboa1.jpeg" alt="Balboa Park" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/balboa2.jpeg" alt="Balboa Park" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- San Diego Zoo -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🐼 San Diego Zoo</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">World-famous and located inside Balboa Park — fun for families and animal lovers alike.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/zoo1.jpeg" alt="San Diego Zoo" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/zoo2.jpeg" alt="San Diego Zoo" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/zoo3.jpeg" alt="San Diego Zoo" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hydrangea divider -->
+      <div class="flex items-center justify-center my-4">
+        <svg class="w-40 sm:w-56 h-6 text-hydrangea/30" viewBox="0 0 224 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 12h80" stroke="currentColor" stroke-width="1"/>
+          <circle cx="96" cy="10" r="3" fill="currentColor" opacity="0.5"/>
+          <circle cx="102" cy="14" r="3" fill="currentColor" opacity="0.6"/>
+          <circle cx="112" cy="10" r="3.5" fill="currentColor" opacity="0.7"/>
+          <circle cx="122" cy="14" r="3" fill="currentColor" opacity="0.6"/>
+          <circle cx="128" cy="10" r="3" fill="currentColor" opacity="0.5"/>
+          <path d="M144 12h80" stroke="currentColor" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <!-- Food, Drinks & Neighborhood Vibes -->
+      <div class="mb-16">
+        <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-8 text-center">🍹 Food, Drinks & Neighborhood Vibes</h3>
+
+        <!-- Little Italy -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🍽 Little Italy</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Great restaurants, wine bars, and walkable streets — perfect for a lively night out.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/italy1.jpeg" alt="Little Italy" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/italy2.jpeg" alt="Little Italy" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/italy3.jpeg" alt="Little Italy" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Old Town San Diego -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🌮 Old Town San Diego</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Historic charm, margaritas, and delicious Mexican food.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/oldtown1.jpeg" alt="Old Town San Diego" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/oldtown2.png" alt="Old Town San Diego" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/oldtown3.png" alt="Old Town San Diego" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- North Park -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🍻 North Park</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Craft breweries, trendy eateries, and a fun local vibe.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/np-1.jpeg" alt="North Park" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/np-2.jpeg" alt="North Park" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/np-3.jpeg" alt="North Park" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anchor divider -->
+      <div class="flex items-center justify-center my-4">
+        <svg class="w-40 sm:w-56 h-6 text-hydrangea/30" viewBox="0 0 224 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 12 Q25 4 50 12 Q75 20 100 12" stroke="currentColor" stroke-width="1.2" fill="none"/>
+          <g transform="translate(112,12)" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.7">
+            <circle cx="0" cy="-6" r="2.5"/>
+            <line x1="0" y1="-3.5" x2="0" y2="8"/>
+            <path d="M-5.5 5 Q0 11 5.5 5"/>
+            <line x1="-1.5" y1="1" x2="1.5" y2="1"/>
+          </g>
+          <path d="M124 12 Q149 4 174 12 Q199 20 224 12" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        </svg>
+      </div>
+
+      <!-- Strolling & Shopping -->
+      <div class="mb-16">
+        <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-8 text-center">🛍 Strolling & Shopping</h3>
+
+        <!-- Seaport Village -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🌊 Seaport Village</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Waterfront shops and casual dining with bay views.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/sp-1.jpeg" alt="Seaport Village" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/sp-2.jpeg" alt="Seaport Village" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/sp-3.jpeg" alt="Seaport Village" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+
+        <!-- La Jolla Village -->
+        <div class="fade-in mb-8">
+          <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+            <h4 class="font-bona text-xl sm:text-2xl text-ink mb-3">🛍 La Jolla Village</h4>
+            <p class="text-slatey text-base sm:text-lg mb-4">Boutiques, ocean views, and charming coastal streets.</p>
+            <div class="flex gap-3 overflow-x-auto pb-3 snap-x snap-mandatory -mx-2 px-2" style="-webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none;">
+              <img src="san-diego-images/lj-village-1.png" alt="La Jolla Village" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+              <img src="san-diego-images/lj-village-2.png" alt="La Jolla Village" class="h-40 sm:h-52 rounded-2xl object-cover snap-start flex-shrink-0" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== BECCA & ALEXANDER FAVORITES ========== -->
+
+      <!-- Large divider between sections -->
+      <div class="flex items-center justify-center py-6 sm:py-8">
+        <svg class="w-64 sm:w-80 h-10 text-hydrangea/40" viewBox="0 0 320 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 20 Q20 10 40 20 Q60 30 80 20 Q95 12 108 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <circle cx="118" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
+          <circle cx="124" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
+          <circle cx="122" cy="22" r="3" fill="currentColor" opacity="0.4"/>
+          <g transform="translate(160,20)" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.7">
+            <circle cx="0" cy="-8" r="3"/>
+            <line x1="0" y1="-5" x2="0" y2="10"/>
+            <path d="M-7 6 Q0 14 7 6"/>
+            <line x1="-2" y1="0" x2="2" y2="0"/>
+          </g>
+          <circle cx="196" cy="15" r="3.5" fill="currentColor" opacity="0.6"/>
+          <circle cx="202" cy="18" r="3.5" fill="currentColor" opacity="0.5"/>
+          <circle cx="198" cy="22" r="3" fill="currentColor" opacity="0.4"/>
+          <path d="M212 20 Q225 12 240 20 Q260 30 280 20 Q300 10 320 20" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        </svg>
+      </div>
+
+      <h2 class="font-bona text-3xl sm:text-4xl text-ink mb-4 text-center">🫶 Becca & Alexander Favorites</h2>
+      <p class="text-center text-slatey text-base sm:text-lg mb-10 max-w-2xl mx-auto italic">The Padres are playing the Yankees at Petco Park (East Village) this weekend so please plan accordingly!</p>
+
+      <!-- Food -->
+      <div class="fade-in mb-10">
+        <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+          <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-6 text-center">🍽 Food</h3>
+          <ul class="space-y-3 text-slatey text-base sm:text-lg">
+            <li>Our favorite breakfast burrito of all time is at <strong class="text-ink">Don Roman</strong> on El Cajon! Make sure to add the chipotle cream sauce</li>
+            <li><strong class="text-ink">Tacos El Gordo</strong> is famous for (yes) its tacos! Many different locations available.</li>
+            <li><strong class="text-ink">Liberty Station</strong> has many amazing restaurants including Hawaiian Fresh Poke!</li>
+            <li><strong class="text-ink">Miguel's</strong> in Midway is a fun Mexican restaurant, but with amazing waterfront views</li>
+            <li><strong class="text-ink">Oscar's Fish Tacos</strong> in Pacific Beach</li>
+            <li><strong class="text-ink">Board and Brew</strong> sandwiches in Pacific Beach and La Jolla UTC mall</li>
+            <li><strong class="text-ink">The Cottage</strong> for brunch in La Jolla Village</li>
+            <li><strong class="text-ink">Mr. Frosty's Ice Cream</strong> (we get the chocolate cake batter milkshake!) in Pacific Beach</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Coffee -->
+      <div class="fade-in mb-10">
+        <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+          <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-6 text-center">☕ Coffee</h3>
+          <ul class="space-y-3 text-slatey text-base sm:text-lg">
+            <li><strong class="text-ink">Spill the Beans</strong> in East Village and Seaport (bagel sandwiches are also so good)</li>
+            <li><strong class="text-ink">Dark Horse</strong> in North Park</li>
+            <li><strong class="text-ink">Bird Rock Coffee Roasters</strong> in Bird Rock and many other locations</li>
+            <li><strong class="text-ink">HINAR</strong> in East Village (coffee, matcha, and desserts are amazing)</li>
+            <li><strong class="text-ink">Immersion</strong> in La Jolla (amazing matcha)</li>
+            <li><strong class="text-ink">Better Buzz</strong> (trendy, sweet drinks)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Breweries -->
+      <div class="fade-in mb-10">
+        <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+          <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-6 text-center">🍺 Breweries</h3>
+          <ul class="space-y-3 text-slatey text-base sm:text-lg">
+            <li><strong class="text-ink">Villains Brewing</strong> in East Village</li>
+            <li><strong class="text-ink">Harland Brewing</strong> in Bay Park or South Park</li>
+            <li><strong class="text-ink">Ketch Brewing</strong> in Midway (stunning waterfront views)</li>
+            <li><strong class="text-ink">Hess Brewing</strong> in Seaport</li>
+            <li><strong class="text-ink">Bay City Brewing Rooftop</strong> in East Village</li>
+            <li><strong class="text-ink">Coronado Brewing</strong> in Coronado and Mariana Blvd</li>
+            <li><strong class="text-ink">Kilowatt Brewing</strong> in Ocean Beach and Kearny Mesa</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Cocktail Bars -->
+      <div class="fade-in mb-10">
+        <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+          <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-6 text-center">🍸 Cocktail Bars</h3>
+          <ul class="space-y-3 text-slatey text-base sm:text-lg">
+            <li><strong class="text-ink">The Nolan Rooftop Bar</strong> in Downtown (home of Becca and Alexander's first date)</li>
+            <li><strong class="text-ink">Oculto</strong> speakeasy in Old Town. Be sure to make a reservation!</li>
+            <li><strong class="text-ink">Good News</strong> mocktail bar in Hillcrest</li>
+            <li><strong class="text-ink">Seven Grand</strong> whiskey bar in North Park</li>
+            <li><strong class="text-ink">Park & Rec</strong> in University Heights</li>
+            <li><strong class="text-ink">Sycamore Den</strong> in Normal Heights</li>
+            <li><strong class="text-ink">52 Remedies</strong> in Convoy (make a reservation)</li>
+            <li><strong class="text-ink">Raised by Wolves</strong> in UTC mall in La Jolla (make a reservation)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Activities -->
+      <div class="fade-in mb-10">
+        <div class="rounded-3xl bg-skywash p-6 sm:p-8">
+          <h3 class="font-bona text-2xl sm:text-3xl text-ink mb-6 text-center">🤸 Activities</h3>
+          <ul class="space-y-3 text-slatey text-base sm:text-lg">
+            <li><strong class="text-ink">Little Italy Farmer's Market</strong> on Saturday mornings or <strong class="text-ink">Hillcrest Farmer's Market</strong> on Sundays</li>
+            <li><strong class="text-ink">Padres at Petco Park!</strong> The weekend of the wedding they are playing the Yankees!</li>
+            <li>Shopping at <strong class="text-ink">UTC mall</strong> in La Jolla</li>
+            <li>Brunch and walking to see the <strong class="text-ink">Sea Lions in La Jolla Village</strong></li>
+            <li>Walking along <strong class="text-ink">Seaport</strong> for views of the water and USS Midway</li>
+            <li>Walk along the boardwalk in <strong class="text-ink">Mission Beach / Pacific Beach</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center fade-in mt-12">
+        <a href="rsvp.html" class="inline-flex rounded-2xl bg-ink text-white px-8 py-4 text-lg font-medium shadow hover:shadow-md hover:bg-ink/90 transition-all">
+          RSVP Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave separator -->
+  <div class="w-full overflow-hidden">
+    <svg class="w-full h-8 sm:h-12" viewBox="0 0 1200 40" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 40 L0 20 Q150 0 300 20 Q450 40 600 20 Q750 0 900 20 Q1050 40 1200 20 L1200 40 Z" fill="#E8F3F9"/>
+    </svg>
+  </div>
+
+  <!-- Footer -->
+  <footer class="py-6 sm:py-8 px-4 sm:px-6 text-[#566992] bg-skywash ">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4">
+      <div class="text-center md:text-left">
+        <p class="text-lg sm:text-xl leading-tight">The Ryan Wedding</p>
+        <p class="leading-tight text-sm sm:text-base">September 5, 2026</p>
+      </div>
+      <img src="sailboat.svg" alt="Sailboat" class="w-6 sm:w-8 h-6 sm:h-8" />
+      <p class="text-gray-500 text-sm sm:text-base text-center md:text-right">Made with <span class="text-red-500">❤️</span> by Alexander</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // IntersectionObserver for subtle fade-ins
+    (function io(){
+      if(!('IntersectionObserver' in window)) return;
+      const obs = new IntersectionObserver((entries)=>{
+        for(const e of entries){ if(e.isIntersecting){ e.target.classList.add('is-visible'); obs.unobserve(e.target); } }
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+    })();
+
+    // Mobile menu toggle
+    (function mobileMenu(){
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      if (!menuBtn || !menu) return;
+
+      menuBtn.addEventListener('click', function() {
+        const isHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden', !isHidden);
+
+        const svg = menuBtn.querySelector('svg path');
+        if (svg) {
+          if (isHidden) {
+            svg.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+          } else {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+
+      menu.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+          menu.classList.add('hidden');
+          const svg = menuBtn.querySelector('svg path');
+          if (svg) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+
+      window.addEventListener('resize', function() {
+        if (window.innerWidth >= 768) {
+          menu.classList.add('hidden');
+          const svg = menuBtn.querySelector('svg path');
+          if (svg) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
