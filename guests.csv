@@ -1,5 +1,5 @@
 household,party_size,plus_one
-# NOTE: Some rows use informal names (Mom, Dad, Grandma, Uncle, Aunt, Mimi, Bapa, Papa, Gibby, Elisha, Carolyn, etc.)
+# NOTE: Some rows use informal names (Mom," Dad"," Grandma"," Uncle"," Aunt"," Mimi"," Bapa"," Papa"," Gibby"," Elisha"," Carolyn"," etc.)"
 # Replace these with real first/last names so RSVP matching works.
 Mom & Oliver,2,no
 Dad & Michelle,2,no
@@ -100,3 +100,4 @@ Molly Ming,1,yes
 Rosemary & Matt,2,no
 Kristen & Matt,2,no
 Stephanie Szuter,1,no
+Chris & Walt Oneschuk,2,no
